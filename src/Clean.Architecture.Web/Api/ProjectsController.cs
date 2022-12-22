@@ -35,8 +35,8 @@ public class ProjectsController : BaseApiController
   }
 
   // GET: api/Projects
-  [HttpGet("{id:int}")]
-  public async Task<IActionResult> GetById(int id)
+  [HttpGet("{id:Guid}")]
+  public async Task<IActionResult> GetById(Guid id)
   {
     var projectSpec = new ProjectByIdWithItemsSpec(id);
     var project = await _repository.FirstOrDefaultAsync(projectSpec);
@@ -75,8 +75,8 @@ public class ProjectsController : BaseApiController
   }
 
   // PATCH: api/Projects/{projectId}/complete/{itemId}
-  [HttpPatch("{projectId:int}/complete/{itemId}")]
-  public async Task<IActionResult> Complete(int projectId, int itemId)
+  [HttpPatch("{projectId:Guid}/complete/{itemId}")]
+  public async Task<IActionResult> Complete(Guid projectId, Guid itemId)
   {
     var projectSpec = new ProjectByIdWithItemsSpec(projectId);
     var project = await _repository.FirstOrDefaultAsync(projectSpec);

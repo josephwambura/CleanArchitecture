@@ -7,13 +7,20 @@ namespace Clean.Architecture.Web;
 
 public static class SeedData
 {
-  public static readonly Contributor Contributor1 = new ("Ardalis");
+  public static readonly Contributor Contributor1 = new("Ardalis")
+  {
+    Id = Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1")
+  };
   public static readonly Contributor Contributor2 = new ("Snowfrog");
-  public static readonly Project TestProject1 = new Project("Test Project", PriorityStatus.Backlog);
+  public static readonly Project TestProject1 = new Project("Test Project", PriorityStatus.Backlog)
+  {
+    Id = Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1")
+  };
   public static readonly ToDoItem ToDoItem1 = new ToDoItem
   {
     Title = "Get Sample Working",
-    Description = "Try to get the sample to build."
+    Description = "Try to get the sample to build.",
+    Id = Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1")
   };
   public static readonly ToDoItem ToDoItem2 = new ToDoItem
   {

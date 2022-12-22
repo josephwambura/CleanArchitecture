@@ -8,7 +8,7 @@ public class ToDoItem : EntityBase
 {
   public string Title { get; set; } = string.Empty;
   public string Description { get; set; } = string.Empty;
-  public int? ContributorId { get; private set; }
+  public Guid? ContributorId { get; private set; }
   public bool IsDone { get; private set; }
 
   public void MarkComplete()
@@ -21,7 +21,7 @@ public class ToDoItem : EntityBase
     }
   }
 
-  public void AddContributor(int contributorId)
+  public void AddContributor(Guid contributorId)
   {
     Guard.Against.Null(contributorId, nameof(contributorId));
     ContributorId = contributorId;

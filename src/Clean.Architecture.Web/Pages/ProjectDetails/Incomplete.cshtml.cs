@@ -11,7 +11,7 @@ public class IncompleteModel : PageModel
   private readonly IRepository<Project> _repository;
 
   [BindProperty(SupportsGet = true)]
-  public int ProjectId { get; set; }
+  public Guid ProjectId { get; set; }
 
   public List<ToDoItem>? ToDoItems { get; set; }
 

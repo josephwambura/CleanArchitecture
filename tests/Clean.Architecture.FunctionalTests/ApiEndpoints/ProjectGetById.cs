@@ -18,9 +18,9 @@ public class ProjectGetById : IClassFixture<CustomWebApplicationFactory<WebMarke
   [Fact]
   public async Task ReturnsSeedProjectGivenId1()
   {
-    var result = await _client.GetAndDeserializeAsync<GetProjectByIdResponse>(GetProjectByIdRequest.BuildRoute(1));
+    var result = await _client.GetAndDeserializeAsync<GetProjectByIdResponse>(GetProjectByIdRequest.BuildRoute(Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1")));
 
-    Assert.Equal(1, result.Id);
+    Assert.Equal(Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1"), result.Id);
     Assert.Equal(SeedData.TestProject1.Name, result.Name);
     Assert.Equal(3, result.Items.Count);
   }
@@ -28,7 +28,7 @@ public class ProjectGetById : IClassFixture<CustomWebApplicationFactory<WebMarke
   [Fact]
   public async Task ReturnsNotFoundGivenId0()
   {
-    string route = GetProjectByIdRequest.BuildRoute(0);
+    string route = GetProjectByIdRequest.BuildRoute(Guid.Empty);
     _ = await _client.GetAndEnsureNotFoundAsync(route);
   }
 }

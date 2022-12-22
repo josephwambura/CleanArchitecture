@@ -17,9 +17,12 @@ public class ProjectController : Controller
   }
 
   // GET project/{projectId?}
-  [HttpGet("{projectId:int}")]
-  public async Task<IActionResult> Index(int projectId = 1)
+  [HttpGet("{projectId:Guid}")]
+  public async Task<IActionResult> Index(Guid projectId)
   {
+    if (projectId == Guid.Empty)
+      projectId = Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1");
+
     var spec = new ProjectByIdWithItemsSpec(projectId);
     var project = await _projectRepository.FirstOrDefaultAsync(spec);
     if (project == null)

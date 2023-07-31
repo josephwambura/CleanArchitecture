@@ -1,5 +1,5 @@
 ﻿using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.SharedKernel.Interfaces;
+
 using FastEndpoints;
 
 namespace Clean.Architecture.Web.Endpoints.ContributorEndpoints;
@@ -30,6 +30,6 @@ public class List : EndpointWithoutRequest<ContributorListResponse>
         .ToList()
     };
 
-    await SendAsync(response);
+    await SendAsync(response, cancellation: cancellationToken);
   }
 }

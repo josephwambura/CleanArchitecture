@@ -1,5 +1,5 @@
 ﻿using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.SharedKernel.Interfaces;
+
 using FastEndpoints;
 
 namespace Clean.Architecture.Web.Endpoints.ContributorEndpoints;
@@ -37,6 +37,6 @@ public class Create : Endpoint<CreateContributorRequest, CreateContributorRespon
       name: createdItem.Name
     );
 
-    await SendAsync(response);
+    await SendAsync(response, cancellation: cancellationToken);
   }
 }

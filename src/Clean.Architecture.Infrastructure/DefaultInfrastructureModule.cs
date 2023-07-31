@@ -1,13 +1,18 @@
 ﻿using System.Reflection;
+
 using Autofac;
+
 using AutoMapper.Contrib.Autofac.DependencyInjection;
+
 using Clean.Architecture.Application.DTO;
 using Clean.Architecture.Core.Interfaces;
 using Clean.Architecture.Core.ProjectAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.Infrastructure.Services;
+
 using MediatR;
 using MediatR.Pipeline;
+
 using Module = Autofac.Module;
 
 namespace Clean.Architecture.Infrastructure;
@@ -73,16 +78,16 @@ public class DefaultInfrastructureModule : Module
       .As(typeof(IRepository<>))
       .As(typeof(IReadRepository<>))
       .InstancePerLifetimeScope();
-    
+
     builder.RegisterGeneric(typeof(EfRepository<>))
       .As(typeof(IRepository<>))
       .As(typeof(IReadRepository<>))
       .InstancePerLifetimeScope();
-    
+
     builder.RegisterType<UnitOfWork>()
       .As<IUnitOfWork>()
       .InstancePerLifetimeScope();
-    
+
     builder.RegisterType<ChannelService>()
       .As<IChannelService>()
       .InstancePerLifetimeScope();
@@ -96,7 +101,7 @@ public class DefaultInfrastructureModule : Module
       .RegisterType<DomainEventDispatcher>()
       .As<IDomainEventDispatcher>()
       .InstancePerLifetimeScope();
-    
+
     builder
       .RegisterType<AuthDomainEventDispatcher>()
       .As<IAuthDomainEventDispatcher>()
@@ -104,8 +109,8 @@ public class DefaultInfrastructureModule : Module
 
     var mediatrOpenTypes = new[]
     {
-      typeof(IRequestHandler<,>), 
-      typeof(IRequestExceptionHandler<,,>), 
+      typeof(IRequestHandler<,>),
+      typeof(IRequestExceptionHandler<,,>),
       typeof(IRequestExceptionAction<,>),
       typeof(INotificationHandler<>),
     };

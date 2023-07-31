@@ -1,7 +1,7 @@
 ﻿using Ardalis.ApiEndpoints;
+
 using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.SharedKernel.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Clean.Architecture.Web.Endpoints.ProjectEndpoints;
@@ -26,7 +26,7 @@ public class Update : EndpointBaseAsync
   ]
   public override async Task<ActionResult<UpdateProjectResponse>> HandleAsync(
     UpdateProjectRequest request,
-      CancellationToken cancellationToken = new ())
+      CancellationToken cancellationToken = new())
   {
     if (request.Name == null)
     {

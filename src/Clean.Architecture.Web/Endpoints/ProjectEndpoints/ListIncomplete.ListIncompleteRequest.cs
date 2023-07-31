@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Clean.Architecture.Web.Endpoints.ProjectEndpoints;
+﻿namespace Clean.Architecture.Web.Endpoints.ProjectEndpoints;
 
 public class ListIncompleteRequest
 {
   [FromRoute]
-  public int ProjectId { get; set; }
+  public Guid ProjectId { get; set; }
   [FromQuery]
   public string? SearchString { get; set; }
 }

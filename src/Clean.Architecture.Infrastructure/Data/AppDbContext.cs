@@ -9,13 +9,11 @@ using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
 using Clean.Architecture.Core.ContributorAggregate;
 using Clean.Architecture.Core.InventoryModule.ProductAggregate;
 using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Core.WeatherForecastAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.Infrastructure.Extensions;
-using Clean.Architecture.SharedKernel;
-using Clean.Architecture.SharedKernel.Interfaces;
-using Clean.Architecture.SharedKernel.Utils;
+
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 
 namespace Clean.Architecture.Infrastructure.Data;
 
@@ -30,6 +28,7 @@ public class AppDbContext : DbContext
     _dispatcher = dispatcher;
   }
 
+  public DbSet<WeatherForecast> WeatherForecasts => Set<WeatherForecast>();
   public DbSet<ToDoItem> ToDoItems => Set<ToDoItem>();
   public DbSet<Project> Projects => Set<Project>();
   public DbSet<Contributor> Contributors => Set<Contributor>();

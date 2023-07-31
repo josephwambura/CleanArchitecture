@@ -1,7 +1,5 @@
 ﻿using Ardalis.Specification;
 
-using Clean.Architecture.Core.MessagingModule.NotificationRecipientAggregate;
-
 namespace Clean.Architecture.Core.MessagingModule.NotificationRecipientAggregate.Specifications;
 
 public class NotificationRecipientByPhoneNumberSpec : Specification<NotificationRecipient>, ISingleResultSpecification

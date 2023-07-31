@@ -1,6 +1,6 @@
-﻿using FastEndpoints;
-using Ardalis.Result;
-using Clean.Architecture.Core.Interfaces;
+﻿using Clean.Architecture.Core.Interfaces;
+
+using FastEndpoints;
 
 namespace Clean.Architecture.Web.Endpoints.ContributorEndpoints;
 
@@ -29,10 +29,10 @@ public class Delete : Endpoint<DeleteContributorRequest>
 
     if (result.Status == ResultStatus.NotFound)
     {
-      await SendNotFoundAsync();
+      await SendNotFoundAsync(cancellationToken);
       return;
     }
 
-    await SendNoContentAsync();
+    await SendNoContentAsync(cancellationToken);
   }
 }

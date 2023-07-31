@@ -1,13 +1,13 @@
 ﻿using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 
 using Ardalis.HttpClientTestExtensions;
 
-using System.Text.Json;
+using Clean.Architecture.Application.DTO.MessagingModule.EmailAlertAggregate;
+using Clean.Architecture.SharedKernel.Utils;
 
 using Xunit;
-using Clean.Architecture.Application.DTO.MessagingModule.EmailAlertAggregate;
-using System.Text.Encodings.Web;
-using Clean.Architecture.SharedKernel.Utils;
 
 namespace Clean.Architecture.FunctionalTests.ControllerApis;
 

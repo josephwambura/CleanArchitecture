@@ -4,6 +4,7 @@ using Clean.Architecture.Application.Interfaces;
 using Clean.Architecture.Core.ContributorAggregate;
 using Clean.Architecture.Core.ContributorAggregate.Events;
 using Clean.Architecture.SharedKernel.Interfaces;
+
 using MediatR;
 
 namespace Clean.Architecture.Application.Services;

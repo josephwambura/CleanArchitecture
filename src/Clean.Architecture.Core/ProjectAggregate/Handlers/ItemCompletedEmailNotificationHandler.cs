@@ -1,6 +1,8 @@
 ﻿using Ardalis.GuardClauses;
+
 using Clean.Architecture.Core.Interfaces;
 using Clean.Architecture.Core.ProjectAggregate.Events;
+
 using MediatR;
 
 namespace Clean.Architecture.Core.ProjectAggregate.Handlers;

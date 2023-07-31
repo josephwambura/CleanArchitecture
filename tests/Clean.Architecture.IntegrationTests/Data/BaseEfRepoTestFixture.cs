@@ -6,8 +6,10 @@ using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Infrastructure.Data;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.SharedKernel.Interfaces;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
 using Moq;
 
 namespace Clean.Architecture.IntegrationTests.Data;
@@ -51,7 +53,7 @@ public abstract class BaseEfRepoTestFixture
 
     return builder.Options;
   }
-  
+
   protected static DbContextOptions<ApplicationDbContext> CreateNewAuthContextOptions()
   {
     // Create a fresh service provider, and therefore a fresh

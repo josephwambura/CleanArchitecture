@@ -5,6 +5,7 @@ using Clean.Architecture.SharedKernel.Utils;
 using MediatR;
 
 using Moq;
+
 using Xunit;
 
 namespace Clean.Architecture.UnitTests.Core.Services;

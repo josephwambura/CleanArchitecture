@@ -1,8 +1,11 @@
 ﻿using Clean.Architecture.Core.ContributorAggregate;
 using Clean.Architecture.Core.Services;
 using Clean.Architecture.SharedKernel.Interfaces;
+
 using MediatR;
+
 using Moq;
+
 using Xunit;
 
 namespace Clean.Architecture.UnitTests.Core.Services;

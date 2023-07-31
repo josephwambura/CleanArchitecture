@@ -1,4 +1,5 @@
 ﻿using Ardalis.Result;
+
 using Clean.Architecture.Application.DTO.ProjectAggregate;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Utils;
@@ -20,6 +21,6 @@ public interface IProjectService
   Task<Result<PageCollectionInfo<ProjectDTO>>> GetProjectsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
 
   Task<Result> MarkProjectItemsCompleteAsync(Guid projectId, Guid itemId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
-  
+
   Task<Result> MarkProjectAllItemsCompleteAsync(Guid projectId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
 }

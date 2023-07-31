@@ -1,4 +1,5 @@
 ﻿using Ardalis.Result;
+
 using Clean.Architecture.Application.Core.Interfaces.MessagingModule;
 using Clean.Architecture.Application.DTO.MessagingModule.TextAlertAggregate;
 using Clean.Architecture.Core.MessagingModule.TextAlertAggregate;

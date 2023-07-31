@@ -3,7 +3,6 @@
 using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 
 namespace Clean.Architecture.Infrastructure.Data.Auth;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

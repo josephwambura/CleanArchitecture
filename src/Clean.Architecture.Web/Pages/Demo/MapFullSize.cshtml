@@ -1,0 +1,29 @@
+﻿@page 
+@model MapFullSizeModel
+@{
+    ViewData["Title"] = "Map FullSize";
+}
+
+<!-- Page header -->
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    @ViewData["Title"]
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page body -->
+<div class="page-body">
+    <div class="map flex-fill" id="map-google"></div>
+</div>
+
+@section Scripts {
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr5mRB4U1KRkVznIrDWEvZjroYcD202DI" asp-append-version="true" defer></script>
+
+}

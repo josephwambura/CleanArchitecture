@@ -3,6 +3,7 @@ using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.SharedKernel.Utils;
 
 using Microsoft.EntityFrameworkCore;
+
 using Xunit;
 
 namespace Clean.Architecture.IntegrationTests.Data;

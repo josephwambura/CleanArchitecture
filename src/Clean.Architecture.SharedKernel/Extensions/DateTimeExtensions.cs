@@ -2,5 +2,5 @@
 
 public static class DateTimeExtensions
 {
-  public static string ISO8601DateTimeFormat(this DateTime dateTime) => dateTime.ToUniversalTime().ToString("o");
+  public static string ISO8601DateTimeFormat(this DateTimeOffset dateTime) => dateTime.ToUniversalTime().ToString("o");
 }

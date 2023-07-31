@@ -14,7 +14,7 @@ namespace Clean.Architecture.Infrastructure.Interfaces;
 
 public interface IChannelService
 {
-  #region ProductDTO
+  #region ProjectDTO
 
   Task<Result<ProjectDTO>> AddProjectAsync(ProjectDTO projectDTO, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
@@ -23,13 +23,13 @@ public interface IChannelService
   Task<Result> DeleteProjectAsync(Guid projectId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<ProjectDTO>> FindProjectAsync(Guid projectId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result<List<ProjectDTO>>> FindProjectsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<PageCollectionInfo<ProjectDTO>>> GetProjectsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result> MarkProjectItemsCompleteAsync(Guid projectId, Guid itemId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result> MarkProjectAllItemsCompleteAsync(Guid projectId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<DashboardDTO>> FindDashboardsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
@@ -47,7 +47,7 @@ public interface IChannelService
   Task<Result> DeleteCompanyAsync(Guid companyId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<CompanyDTO>> FindCompanyAsync(Guid companyId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result<List<CompanyDTO>>> FindCompaniesAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<PageCollectionInfo<CompanyDTO>>> GetCompaniesWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
@@ -63,9 +63,9 @@ public interface IChannelService
   Task<Result> DeleteStaticSettingAsync(Guid staticSettingId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<StaticSettingDTO>> FindStaticSettingAsync(Guid staticSettingId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result<StaticSettingDTO>> FindStaticSettingByKeyAsync(string key, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result<List<StaticSettingDTO>>> FindStaticSettingsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<PageCollectionInfo<StaticSettingDTO>>> GetStaticSettingsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
@@ -123,9 +123,9 @@ public interface IChannelService
   Task<Result<bool>> BulkInsertEmailAlertsAsync(List<EmailAlertDTO> emailAlertDTOs, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result> UpdateEmailAlertAsync(Guid emailAlertId, EmailAlertDTO emailAlertDTO, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result> MarkQueuedEmailAlertAsync(Guid emailAlertId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result> MarkDeliveredEmailAlertAsync(Guid emailAlertId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result> DeleteEmailAlertAsync(Guid emailAlertId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
@@ -135,7 +135,7 @@ public interface IChannelService
   Task<Result<List<EmailAlertDTO>>> FindEmailAlertsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<PageCollectionInfo<EmailAlertDTO>>> GetEmailAlertsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
-  
+
   Task<Result<List<EmailAlertDTO>>> GetEmailAlertsByDLRStatusAndWithFiltersAndInPageAsync(byte[] dlrStatuses, string? searchString, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   #endregion

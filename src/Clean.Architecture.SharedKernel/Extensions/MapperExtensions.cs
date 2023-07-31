@@ -8,12 +8,12 @@ public static class MapperExtensions
   {
     return mapper.Map<TDestination>(source);
   }
-  
+
   public static List<TDestination> MapListTo<TDestination>(this object source, IMapper mapper) where TDestination : class
   {
     return mapper.Map<List<TDestination>>(source);
   }
-  
+
   public static IQueryable<TDestination> ProjectTo<TSource, TDestination>(this IQueryable<TSource> source, IMapper mapper) where TDestination : class
   {
     return mapper.ProjectTo<TDestination>(source);

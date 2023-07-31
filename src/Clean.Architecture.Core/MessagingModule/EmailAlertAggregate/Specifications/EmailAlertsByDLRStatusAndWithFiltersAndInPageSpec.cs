@@ -1,4 +1,5 @@
 ﻿using Ardalis.Specification;
+
 using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.MessagingModule.EmailAlertAggregate.Specifications;
@@ -9,7 +10,7 @@ public class EmailAlertsByDLRStatusAndWithFiltersAndInPageSpec : Specification<E
   {
     Query
       .Where(emailAlert => dlrStatuses.Contains(emailAlert.DLRStatus));
-    
+
     //Query
     //  .Where(emailAlert => emailAlert.DLRStatus == dlrStatuses[0] || emailAlert.DLRStatus == dlrStatuses[1]);
 

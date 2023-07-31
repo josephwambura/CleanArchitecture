@@ -1,6 +1,7 @@
 ﻿using Clean.Architecture.Core.ContributorAggregate.Events;
-using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.Core.ProjectAggregate.Specifications;
+using Clean.Architecture.SharedKernel.Interfaces;
+
 using MediatR;
 
 namespace Clean.Architecture.Core.ProjectAggregate.Handlers;

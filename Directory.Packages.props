@@ -5,67 +5,68 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Ardalis.ApiEndpoints" Version="4.0.1" />
+    <PackageVersion Include="Ardalis.ApiEndpoints" Version="4.1.0" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="4.0.1" />
-    <PackageVersion Include="Ardalis.HttpClientTestExtensions" Version="4.0.0" />
+    <PackageVersion Include="Ardalis.HttpClientTestExtensions" Version="4.1.0" />
     <PackageVersion Include="Ardalis.ListStartupServices" Version="1.1.4" />
-    <PackageVersion Include="Ardalis.Result" Version="7.0.0" />
-    <PackageVersion Include="Ardalis.Result.AspNetCore" Version="7.0.0" />
+    <PackageVersion Include="Ardalis.Result" Version="7.1.0" />
+    <PackageVersion Include="Ardalis.Result.AspNetCore" Version="7.1.0" />
     <PackageVersion Include="Ardalis.SmartEnum" Version="7.0.0" />
     <PackageVersion Include="Ardalis.Specification" Version="6.1.0" />
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
-    <PackageVersion Include="Autofac" Version="7.0.0" />
+    <PackageVersion Include="Autofac" Version="7.0.1" />
     <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-    <PackageVersion Include="AutoMapper" Version="12.0.0" />
-    <PackageVersion Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="7.1.0" />
-    <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageVersion Include="coverlet.collector" Version="3.2.0" />
+    <PackageVersion Include="AutoMapper" Version="12.0.1" />
+    <PackageVersion Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="7.2.0-alpha.0" />
+    <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="Cronos" Version="0.7.1" />
-    <PackageVersion Include="FastEndpoints" Version="5.8.1" />
-    <PackageVersion Include="FastEndpoints.ApiExplorer" Version="2.0.1" />
+    <PackageVersion Include="FastEndpoints" Version="5.14.0.1-beta" />
+    <PackageVersion Include="FastEndpoints.ApiExplorer" Version="2.1.0" />
     <PackageVersion Include="FastEndpoints.Swagger" Version="5.5.0" />
-    <PackageVersion Include="FastEndpoints.Swagger.Swashbuckle" Version="2.0.1" />
+    <PackageVersion Include="FastEndpoints.Swagger.Swashbuckle" Version="2.1.0" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.53.0" />
     <PackageVersion Include="LazyCache.AspNetCore" Version="2.4.0" />
-    <PackageVersion Include="MassTransit" Version="8.0.15-develop.1268" />
+    <PackageVersion Include="MassTransit" Version="8.1.0-develop.1444" />
     <PackageVersion Include="MassTransit.EntityFrameworkCore" Version="8.0.15-develop.1268" />
-    <PackageVersion Include="MassTransit.Quartz" Version="8.0.15-develop.1268" />
-    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.0.15-develop.1268" />
-    <PackageVersion Include="MediatR" Version="12.0.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.0-preview.2.23153.2" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.3.23174.8" />
+    <PackageVersion Include="MassTransit.Quartz" Version="8.1.0-develop.1444" />
+    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.1.0-develop.1444" />
+    <PackageVersion Include="MediatR" Version="12.1.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-preview.5.23302.2" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.6.23329.4" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0-preview.6.23329.4" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.6.23329.4" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.6.23329.4" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.6.23329.4" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.0-preview.6.23329.11" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.6.23329.7" />
     <PackageVersion Include="Microsoft.Extensions.Localization" Version="8.0.0-preview.3.23177.8" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.0-preview-20230223-05" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.0-preview-23364-03" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
-    <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.2.23158.7" />
+    <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.6.23360.4" />
     <PackageVersion Include="Moq" Version="4.18.4" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageVersion Include="Quartz.Extensions.Hosting" Version="3.6.2" />
+    <PackageVersion Include="Quartz.Extensions.Hosting" Version="3.6.3" />
     <PackageVersion Include="RazorEngineCore" Version="2022.8.1" />
-    <PackageVersion Include="ReportGenerator" Version="5.1.19" />
+    <PackageVersion Include="ReportGenerator" Version="5.1.23" />
     <PackageVersion Include="ReturnTrue.AspNetCore.Identity.Anonymous" Version="1.1.3" />
-    <PackageVersion Include="Serilog.AspNetCore" Version="6.1.1-dev-00295" />
-    <PackageVersion Include="Serilog.Extensions.Hosting" Version="7.0.0-dev-00129" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="7.0.0" />
     <PackageVersion Include="Serilog.Sinks.ApplicationInsights" Version="4.0.1-dev-00043" />
-    <PackageVersion Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="4.2.0-dev-00918" />
     <PackageVersion Include="Stateless" Version="5.13.0" />
     <PackageVersion Include="SQLite" Version="3.13.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
-    <PackageVersion Include="System.Management" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="System.Threading.RateLimiting" Version="8.0.0-preview.2.23128.3" />
-    <PackageVersion Include="xunit" Version="2.4.2" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageVersion Include="System.Management" Version="8.0.0-preview.6.23329.7" />
+    <PackageVersion Include="System.Threading.RateLimiting" Version="8.0.0-preview.6.23329.7" />
+    <PackageVersion Include="xunit" Version="2.5.1-pre.12" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.1-pre.4" />
   </ItemGroup>
 </Project>

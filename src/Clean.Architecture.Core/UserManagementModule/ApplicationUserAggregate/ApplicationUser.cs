@@ -5,6 +5,7 @@ using System.Text.Json;
 using Clean.Architecture.Core.ValueObjects;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
+
 using Microsoft.AspNetCore.Identity;
 
 namespace Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;

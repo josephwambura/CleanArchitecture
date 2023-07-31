@@ -26,15 +26,18 @@ public class DefaultApplicationModule : Module
 
     builder.RegisterType<ContributorService>()
         .As<IContributorService>().InstancePerLifetimeScope();
+    
+    builder.RegisterType<WeatherForecastService>()
+        .As<IWeatherForecastService>().InstancePerLifetimeScope();
 
     #region AdministrationModule
 
     builder.RegisterType<CompanyAppService>()
         .As<ICompanyAppService>().InstancePerLifetimeScope();
-    
+
     builder.RegisterType<EnumerationAppService>()
         .As<IEnumerationAppService>().InstancePerLifetimeScope();
-    
+
     builder.RegisterType<StaticSettingAppService>()
         .As<IStaticSettingAppService>().InstancePerLifetimeScope();
 
@@ -51,7 +54,7 @@ public class DefaultApplicationModule : Module
 
     builder.RegisterType<EmailAlertAppService>()
         .As<IEmailAlertAppService>().InstancePerLifetimeScope();
-    
+
     builder.RegisterType<TextAlertAppService>()
         .As<ITextAlertAppService>().InstancePerLifetimeScope();
 

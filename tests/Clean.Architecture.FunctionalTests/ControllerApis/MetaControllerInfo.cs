@@ -1,5 +1,4 @@
-﻿using Clean.Architecture.Web;
-using Xunit;
+﻿using Xunit;
 
 namespace Clean.Architecture.FunctionalTests.ControllerApis;
 

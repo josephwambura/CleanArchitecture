@@ -116,7 +116,7 @@ public class StaticSettingAppService : IStaticSettingAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<StaticSettingDTO>> FindStaticSettingByKeyAsync(string key, ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -140,7 +140,7 @@ public class StaticSettingAppService : IStaticSettingAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<List<StaticSettingDTO>>> FindStaticSettingsAsync(ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

@@ -1,4 +1,5 @@
 ﻿using Ardalis.Result;
+
 using Clean.Architecture.Application.DTO.InventoryModule.ProductAggregate;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Utils;
@@ -16,7 +17,7 @@ public interface IProductAppService
   Task<Result> DeleteProductAsync(Guid productId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
 
   Task<Result<ProductDTO>> FindProductAsync(Guid productId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
-  
+
   Task<Result<List<ProductDTO>>> FindProductsAsync(ServiceHeader serviceHeader, CancellationToken cancellationToken = default);
 
   Task<Result<PageCollectionInfo<ProductDTO>>> GetProductsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader serviceHeader, CancellationToken cancellationToken = default);

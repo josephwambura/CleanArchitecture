@@ -1,4 +1,5 @@
 ﻿using Ardalis.Specification;
+
 using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.AuditLogAggregate.Specifications;

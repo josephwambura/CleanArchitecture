@@ -1,10 +1,6 @@
 ﻿using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.Infrastructure.Data;
 using Clean.Architecture.Infrastructure.Data.Auth;
-using Clean.Architecture.SharedKernel.Utils;
 
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Clean.Architecture.Infrastructure;

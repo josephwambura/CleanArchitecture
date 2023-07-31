@@ -1,8 +1,9 @@
-﻿using Clean.Architecture.SharedKernel.Extensions;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+
+using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.SharedKernel.Utils;
 

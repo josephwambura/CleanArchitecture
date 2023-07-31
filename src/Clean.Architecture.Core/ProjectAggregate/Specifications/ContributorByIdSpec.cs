@@ -1,4 +1,5 @@
 ﻿using Ardalis.Specification;
+
 using Clean.Architecture.Core.ContributorAggregate;
 
 namespace Clean.Architecture.Core.ProjectAggregate.Specifications;

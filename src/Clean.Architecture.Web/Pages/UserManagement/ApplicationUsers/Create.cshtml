@@ -1,0 +1,119 @@
+﻿@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    Application Users
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row row-cards">
+            <form method="post" enctype="multipart/form-data" class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Create New Application User</h3>
+                </div>
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.FirstName">First Name</label>
+                        <div class="col">
+                            <input type="text" asp-for="ApplicationUserBindingModel.FirstName" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter First Name">
+                            <small class="form-hint">A brief First Name for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.MiddleName">First Name</label>
+                        <div class="col">
+                            <input type="text" asp-for="ApplicationUserBindingModel.MiddleName" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter Middle Name">
+                            <small class="form-hint">A brief Middle Name for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.MiddleName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.LastName">Last Name</label>
+                        <div class="col">
+                            <input type="text" asp-for="ApplicationUserBindingModel.LastName" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter Last Name">
+                            <small class="form-hint">A brief Last Name for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.UserName">UserName</label>
+                        <div class="col">
+                            <input type="text" asp-for="ApplicationUserBindingModel.UserName" class="form-control" aria-describedby="nameHelp" placeholder="Enter name">
+                            <small class="form-hint">A unique UserName for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.UserName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.Email">Email</label>
+                        <div class="col">
+                            <input type="email" asp-for="ApplicationUserBindingModel.Email" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter Email">
+                            <small class="form-hint">A brief Email for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.PhoneNumber">Phone Number</label>
+                        <div class="col">
+                            <input type="tel" asp-for="ApplicationUserBindingModel.PhoneNumber" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter Phone Number">
+                            <small class="form-hint">A brief Phone Number for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.ProfilePicture">Profile Picture</label>
+                        <div class="col">
+                            <input type="file" asp-for="@Model.ProfilePictureFile" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter Profile Picture">
+                            <small class="form-hint">A brief Profile Picture for the application User</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.ProfilePicture" class="text-danger"></span>
+                    </div>
+                    @*<div class="mb-3 row">
+                        <label class="col-3 col-form-label required control-label" asp-for="ApplicationUserBindingModel.ApplicationRoleSelectListItems">Available Roles</label>
+                        <div class="col">
+                            <ul>
+                                @for (var i = 0; i < Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems!.Count(); i++)
+                                {
+                                    <li>
+                                        <input type="checkbox" asp-for="@Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems![i].Selected" />
+                                        <label asp-for="@Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems![i].Selected">@Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems![i].Display</label>
+                                        <input type="hidden" asp-for="@Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems![i].Id" />
+                                        <input type="hidden" asp-for="@Model.ApplicationUserBindingModel.ApplicationRoleSelectListItems![i].Display" />
+                                    </li>
+                                }
+                            </ul>
+                            <small class="form-hint">Roles for the user</small>
+                        </div>
+                        <span asp-validation-for="ApplicationUserBindingModel.ApplicationRoleSelectListItems" class="text-danger"></span>
+                    </div>*@
+                </div>
+                <div class="card-footer text-end">
+                    <div class="d-flex">
+                        <a asp-page="./Index" class="btn btn-link">Cancel</a>
+                        <button type="submit" class="btn btn-primary ms-auto">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

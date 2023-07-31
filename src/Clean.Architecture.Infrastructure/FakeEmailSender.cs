@@ -10,7 +10,7 @@ public class FakeEmailSender : IEmailSender
   {
     return Task.CompletedTask;
   }
-  
+
   public Task SendEmailAsync(string to, string from, string subject, string body, CancellationToken cancellationToken, bool isBodyHtml = false)
   {
     return Task.CompletedTask;

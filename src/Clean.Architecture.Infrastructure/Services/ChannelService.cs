@@ -13,6 +13,7 @@ using Clean.Architecture.Application.Interfaces;
 using Clean.Architecture.Application.Interfaces.AdministrationModule;
 using Clean.Architecture.Application.Interfaces.InventoryModule;
 using Clean.Architecture.Application.Interfaces.UserManagementModule;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
@@ -216,7 +217,7 @@ public class ChannelService : IChannelService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<DashboardDTO>> FindDashboardsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -446,7 +447,7 @@ public class ChannelService : IChannelService
       return Result<StaticSettingDTO>.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<StaticSettingDTO>> FindStaticSettingByKeyAsync(string key, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -846,7 +847,7 @@ public class ChannelService : IChannelService
       return Result<(IdentityResult, string, string)>.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<IdentityResult>> ConfirmApplicationUserEmailAsync(string userId, string code, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -866,7 +867,7 @@ public class ChannelService : IChannelService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<Microsoft.AspNetCore.Identity.SignInResult>> LoginApplicationUserAsync(AccountLoginBindingModel accountLoginBindingModel, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -1074,7 +1075,7 @@ public class ChannelService : IChannelService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result> MarkQueuedEmailAlertAsync(Guid emailAlertId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -1094,7 +1095,7 @@ public class ChannelService : IChannelService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result> MarkDeliveredEmailAlertAsync(Guid emailAlertId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -1194,7 +1195,7 @@ public class ChannelService : IChannelService
       return Result<PageCollectionInfo<EmailAlertDTO>>.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<List<EmailAlertDTO>>> GetEmailAlertsByDLRStatusAndWithFiltersAndInPageAsync(byte[] dlrStatuses, string? searchString, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

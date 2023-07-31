@@ -7,7 +7,7 @@ public interface IReadRepository<T> : IReadRepositoryBase<T> where T : class, IA
   Task<TTarget?> FirstOrDefaultAsync<TTarget>(ISpecification<T> specification, CancellationToken cancellationToken = default) where TTarget : class;
 
   Task<List<TTarget>?> ListAsync<TTarget>(ISpecification<T> specification, CancellationToken cancellationToken = default) where TTarget : class;
-  
+
   Task<List<TTarget>?> ListAsync<TTarget>(CancellationToken cancellationToken = default) where TTarget : class;
 
   IQueryable<T> ApplySpecification(ISpecification<T> specification);

@@ -1,0 +1,170 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<!-- Page header -->
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    @ViewData["Title"]
+                </h2>
+            </div>
+            <!-- Page title actions -->
+            <div class="col-auto ms-auto d-print-none">
+                <a asp-page="Create" class="btn btn-primary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                    Create New
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+    <div class="container-xl">
+        <div class="card">
+            <div class="card-body">
+                <div id="table-default" class="table-responsive">
+                    <div id="tableContainer">
+                        <!-- The div element will be populated by the DataTables plugin -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Create a script element to initialize the DataTables plugin -->
+    <script>
+
+        (function ($) {
+
+            // Create a table element inside the div element
+            var table = $('<table class="table table-striped row-border hover order-column" style="width:100%"></table>').appendTo('#tableContainer');
+            // Initialize DataTables on the table element
+            table.DataTable({
+                // Enable server-side processing
+                serverSide: true,
+                // Enable processing indicator
+                processing: true,
+                // Customize the processing indicator
+                language: {
+                    processing: '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>'
+                },
+                scrollY: '50vh', // adjust this value to fit your screen height
+                scrollCollapse: true,
+                "deferRender": true,
+                "searching": true,
+                "search": {
+                    return: true,
+                },
+                "ordering": true,
+                "paging": true,
+                "pagingType": "full_numbers",
+                responsive: true,
+                pageLength: 10,
+                order: [[6, 'desc']],
+                // Specify the Ajax source as the endpoint URL
+                ajax: $.fn.dataTable.pipeline({
+                    "url": '/api/ApplicationUsers/DatatablesList',
+                    "method": "POST",
+                    "pages": 5, // number of pages to cache
+                }),
+                // Specify the columns to display in the table
+                columns: [
+                    { data: 'userName', title: 'UserName' },
+                    { data: 'email', title: 'Email' },
+                    { data: 'emailConfirmed', title: 'Email Confirmed' },
+                    { data: 'phoneNumber', title: 'Phone Number' },
+                    { data: 'phoneNumberConfirmed', title: 'Phone Number Confirmed' },
+                    { data: 'createdBy', title: 'Created By' },
+                    { data: 'formattedCreatedDate', title: 'Created Date' },
+                    {
+                        data: null, // use null for non-data columns
+                        title: "Action", // set the column title
+                        render: function (data, type, row) {
+                            // return HTML content for each row
+                            return `<div class="dropdown">
+                                                <button class="btn dropdown-toggle align-text-top" data-bs-toggle="dropdown">
+                                                    Actions
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item btn btn-ghost-primary detail" href="JavaScript:void(0)">
+                                                        Detail
+                                                    </a>
+                                                    <a class="dropdown-item btn btn-ghost-primary edit" href="JavaScript:void(0)">
+                                                        Edit
+                                                    </a>
+                                                    <a class="dropdown-item btn btn-ghost-primary complete" href="JavaScript:void(0)">
+                                                        Complete
+                                                    </a>
+                                                    <a class="dropdown-item btn btn-ghost-primary delete" href="JavaScript:void(0)">
+                                                        Delete
+                                                    </a>
+                                                </div>
+                                            </div>`;
+                        }
+                    }
+                ],
+                "buttons": [
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Excel',
+                        customize: function (xlsx) {
+                            var source = xlsx.xl['workbook.xml'].getElementsByTagName('sheet')[0];
+                            source.setAttribute('name', 'New Name');
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: 'PDF',
+                    }
+                ],
+            });
+
+            $('#tableContainer table').on('click', '.detail', function () {
+                // get the data of the clicked row
+                var data = table.DataTable().row($(this).closest('tr')).data();
+                // do something with the data, such as deleting
+                // console.log('Detail', data);
+
+                detailProject(data);
+            });
+
+            // use event delegation to handle click events
+            $('#tableContainer table').on('click', '.edit', function () {
+                // get the data of the clicked row
+                var data = table.DataTable().row($(this).closest('tr')).data();
+                // do something with the data, such as editing
+                console.log('Edit', data);
+            });
+
+            $('#tableContainer table').on('click', '.delete', function () {
+                // get the data of the clicked row
+                var data = table.DataTable().row($(this).closest('tr')).data();
+                // do something with the data, such as deleting
+                // console.log('Delete', data);
+
+                deleteProject(data, table);
+            });
+
+            $('#tableContainer table').on('click', '.complete', function () {
+                // get the data of the clicked row
+                var data = table.DataTable().row($(this).closest('tr')).data();
+                // do something with the data, such as deleting
+                // console.log('Complete', data);
+
+                completeProjectAllItems(data);
+            });
+
+        })(jQuery);
+
+    </script>
+}

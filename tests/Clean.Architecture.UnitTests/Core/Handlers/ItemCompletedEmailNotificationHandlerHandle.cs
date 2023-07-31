@@ -2,7 +2,9 @@
 using Clean.Architecture.Core.ProjectAggregate;
 using Clean.Architecture.Core.ProjectAggregate.Events;
 using Clean.Architecture.Core.ProjectAggregate.Handlers;
+
 using Moq;
+
 using Xunit;
 
 namespace Clean.Architecture.UnitTests.Core.Handlers;

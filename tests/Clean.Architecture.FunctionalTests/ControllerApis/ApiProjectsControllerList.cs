@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using System.Text.Json;
+
 using Ardalis.HttpClientTestExtensions;
+
 using Clean.Architecture.Application.DTO.ProjectAggregate;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.Web;
@@ -27,7 +29,7 @@ public class ProjectCreate : IClassFixture<CustomWebApplicationFactory<Program>>
     Assert.Single(result);
     Assert.Contains(result, i => i.Name == SeedData.TestProject1.Name);
   }
-  
+
   //[Fact]
   //public async Task ReturnsOneDashboard()
   //{

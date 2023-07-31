@@ -1,6 +1,4 @@
-﻿using Clean.Architecture.Core.MessagingModule.FCMAlertAggregate;
-
-namespace Clean.Architecture.Infrastructure.Data.Config.MessagingModule;
+﻿namespace Clean.Architecture.Infrastructure.Data.Config.MessagingModule;
 
 public class FCMAlertConfiguration : IEntityTypeConfiguration<FCMAlert>
 {

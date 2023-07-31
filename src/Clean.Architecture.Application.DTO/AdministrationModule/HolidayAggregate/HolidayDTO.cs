@@ -19,11 +19,11 @@ public class HolidayDTO
   [Display(Name = "Description")]
   public string? Description { get; set; }
 
-  public DateTime CreatedDate { get; set; }
+  public DateTimeOffset CreatedDate { get; set; }
   public string? FormattedCreatedDate => CreatedDate.ISO8601DateTimeFormat();
   [Display(Name = "Created By")]
   public string? CreatedBy { get; set; }
-  public DateTime? ModifiedDate { get; set; }
+  public DateTimeOffset? ModifiedDate { get; set; }
   public string? FormattedModifiedDate => ModifiedDate?.ISO8601DateTimeFormat();
   public string? ModifiedBy { get; set; }
 

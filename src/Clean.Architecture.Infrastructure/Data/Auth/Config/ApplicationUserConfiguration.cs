@@ -1,8 +1,4 @@
 ﻿using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.SharedKernel.Utils;
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Clean.Architecture.Infrastructure.Data.Auth.Config;
 

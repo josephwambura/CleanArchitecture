@@ -115,6 +115,13 @@ applicationUserDTO.Password = PasswordGenerator.GeneratePassword(true, true, tru
 
         return Result.Success<(IdentityResult, string, string)>((result, userId, code));
       }
+      else
+      {
+        if (result.Errors.Any())
+        {
+          Result.Error(new[] { $"{string.Join(',', result.Errors.Select(e => $"{e.Code}: {e.Description}").ToList())}" });
+        }
+      }
 
       return Result.Success<(IdentityResult, string, string)>((result, string.Empty, string.Empty));
     }

@@ -1,10 +1,9 @@
 ﻿using System.Text;
+using System.Text.Json;
 
 using Ardalis.HttpClientTestExtensions;
 
 using Clean.Architecture.Application.DTO.InventoryModule.ProductAggregate;
-
-using System.Text.Json;
 
 using Xunit;
 

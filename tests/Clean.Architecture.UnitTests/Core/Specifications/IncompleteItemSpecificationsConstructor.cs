@@ -1,5 +1,6 @@
 ﻿using Clean.Architecture.Core.ProjectAggregate;
 using Clean.Architecture.Core.ProjectAggregate.Specifications;
+
 using Xunit;
 
 namespace Clean.Architecture.UnitTests.Core.Specifications;

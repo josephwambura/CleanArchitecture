@@ -118,7 +118,7 @@ public class EmailAlertAppService : IEmailAlertAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result> MarkQueuedEmailAlertAsync(Guid emailAlertId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -146,7 +146,7 @@ public class EmailAlertAppService : IEmailAlertAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result> MarkDeliveredEmailAlertAsync(Guid emailAlertId, ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

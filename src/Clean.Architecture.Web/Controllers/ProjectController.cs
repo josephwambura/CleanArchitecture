@@ -1,40 +1,33 @@
-﻿using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
-using Clean.Architecture.SharedKernel.Interfaces;
-using Clean.Architecture.Web.ViewModels;
-using Microsoft.AspNetCore.Mvc;
+﻿
+using Clean.Architecture.Application.DTO.ProjectAggregate;
 
 namespace Clean.Architecture.Web.Controllers;
 
 [Route("[controller]")]
 public class ProjectController : Controller
 {
-  private readonly IRepository<Project> _projectRepository;
+  private readonly IChannelService _channelService;
+  private readonly IUnitOfWork _unitOfWork;
 
-  public ProjectController(IRepository<Project> projectRepository)
+  public ProjectController(IChannelService channelService, IUnitOfWork unitOfWork)
   {
-    _projectRepository = projectRepository;
+    _channelService = channelService;
+    _unitOfWork = unitOfWork;
   }
 
-  // GET project/{projectId?}
-  [HttpGet("{projectId:int}")]
-  public async Task<IActionResult> Index(int projectId = 1)
+  // GET project/{id?}
+  [HttpGet("{id:Guid}")]
+  public async Task<IActionResult> Details(Guid id, CancellationToken cancellationToken)
   {
-    var spec = new ProjectByIdWithItemsSpec(projectId);
-    var project = await _projectRepository.FirstOrDefaultAsync(spec);
-    if (project == null)
-    {
-      return NotFound();
-    }
+    var result = await _channelService.FindProjectAsync(id, this.GetServiceHeader(User), cancellationToken);
 
-    var dto = new ProjectViewModel
+    var response = new ProjectViewModel();
+
+    if (result.Status == ResultStatus.Ok)
     {
-      Id = project.Id,
-      Name = project.Name,
-      Items = project.Items
-                    .Select(item => ToDoItemViewModel.FromToDoItem(item))
-                    .ToList()
-    };
-    return View(dto);
+      response = _unitOfWork.MapTo<ProjectViewModel>(result.Value);
+    }
+    return View("Details", response);
+    //return PartialView("_Details", response);
   }
 }

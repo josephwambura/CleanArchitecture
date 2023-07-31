@@ -121,7 +121,7 @@ public class ProjectService : IProjectService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<List<ProjectDTO>>> FindProjectsAsync(ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

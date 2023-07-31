@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using Clean.Architecture.Application.DTO.InventoryModule.ProductAggregate;
 using Clean.Architecture.Core.InventoryModule.ProductAggregate;
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using Clean.Architecture.Application.DTO.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 

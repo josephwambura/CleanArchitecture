@@ -4,8 +4,6 @@ using Clean.Architecture.Core.ValueObjects;
 using Clean.Architecture.SharedKernel.Extensions;
 using Clean.Architecture.SharedKernel.Utils;
 
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace Clean.Architecture.Core.AdministrationModule.AuditLogAggregate;
 
 public static class AuditLogFactory

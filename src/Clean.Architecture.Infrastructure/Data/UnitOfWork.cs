@@ -1,11 +1,7 @@
-﻿using Ardalis.Specification.EntityFrameworkCore;
-
-using AutoMapper;
+﻿using AutoMapper;
 
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.SharedKernel.Extensions;
-using Clean.Architecture.SharedKernel.Interfaces;
-using Clean.Architecture.SharedKernel.Utils;
 
 namespace Clean.Architecture.Infrastructure.Data;
 
@@ -62,7 +58,7 @@ public class UnitOfWork : IUnitOfWork
       return null;
     }
   }
-  
+
   // Generic method to get or create a repository for a given type
   public IRepository<TEntity>? GetIRepository<TEntity>(byte dbConnectionContext = (byte)DbConnectionContext.LIVE) where TEntity : class, IAggregateRoot
   {
@@ -120,7 +116,7 @@ public class UnitOfWork : IUnitOfWork
   {
     return source.MapTo<TDestination>(_mapper);
   }
-  
+
   public List<TDestination> MapListTo<TDestination>(object source) where TDestination : class
   {
     return source.MapListTo<TDestination>(_mapper);

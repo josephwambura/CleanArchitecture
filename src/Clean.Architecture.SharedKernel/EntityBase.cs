@@ -20,9 +20,9 @@ public abstract class EntityBase
     return Id == Guid.Empty;
   }
 
-  public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+  public DateTimeOffset CreatedDate { get; set; } = DateTimeOffset.UtcNow;
 
-  public DateTime? ModifiedDate { get; set; }
+  public DateTimeOffset? ModifiedDate { get; set; }
 
   public string CreatedBy { get; set; } = default!;
 

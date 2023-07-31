@@ -154,7 +154,7 @@ public class ProductAppService : IProductAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<List<ProductDTO>>> FindProductsAsync(ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

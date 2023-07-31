@@ -26,13 +26,13 @@ public class EmailAlertViewModel
 
   public Guid Id { get; set; }
   [Display(Name = "Created Date")]
-  public DateTime CreatedDate { get; set; }
+  public DateTimeOffset CreatedDate { get; set; }
   [Display(Name = "Created Date")]
   public string? FormattedCreatedDate => CreatedDate.ISO8601DateTimeFormat();
   [Display(Name = "Created By")]
   public string? CreatedBy { get; set; }
   [Display(Name = "Modified Date")]
-  public DateTime? ModifiedDate { get; set; }
+  public DateTimeOffset? ModifiedDate { get; set; }
   [Display(Name = "Modified Date")]
   public string? FormattedModifiedDate => ModifiedDate?.ISO8601DateTimeFormat();
   [Display(Name = "Modified By")]

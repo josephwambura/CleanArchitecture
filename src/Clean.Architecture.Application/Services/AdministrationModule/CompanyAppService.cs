@@ -116,7 +116,7 @@ public class CompanyAppService : ICompanyAppService
       return Result.Error(new[] { ex.Message });
     }
   }
-  
+
   public async Task<Result<List<CompanyDTO>>> FindCompaniesAsync(ServiceHeader serviceHeader, CancellationToken cancellationToken = default)
   {
     using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

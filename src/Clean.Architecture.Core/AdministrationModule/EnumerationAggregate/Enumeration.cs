@@ -1,5 +1,5 @@
-﻿using Clean.Architecture.SharedKernel.Interfaces;
-using Clean.Architecture.SharedKernel;
+﻿using Clean.Architecture.SharedKernel;
+using Clean.Architecture.SharedKernel.Interfaces;
 
 namespace Clean.Architecture.Core.AdministrationModule.EnumerationAggregate;
 

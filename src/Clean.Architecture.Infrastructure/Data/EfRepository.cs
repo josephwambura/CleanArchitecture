@@ -1,13 +1,12 @@
 ﻿using Ardalis.Specification;
 using Ardalis.Specification.EntityFrameworkCore;
+
 using AutoMapper;
 
 using Clean.Architecture.Infrastructure.Extensions;
 using Clean.Architecture.SharedKernel.Extensions;
-using Clean.Architecture.SharedKernel.Interfaces;
-using Clean.Architecture.SharedKernel.Utils;
+
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 
 namespace Clean.Architecture.Infrastructure.Data;
 
@@ -27,12 +26,12 @@ public class EfRepository<T> : RepositoryBase<T>, IReadRepository<T>, IRepositor
   {
     return (await base.FirstOrDefaultAsync(specification, cancellationToken))?.MapTo<TTarget>(_mapper);
   }
-  
+
   public async Task<List<TTarget>?> ListAsync<TTarget>(ISpecification<T> specification, CancellationToken cancellationToken = default) where TTarget : class
   {
     return (await base.ListAsync(specification, cancellationToken))?.MapListTo<TTarget>(_mapper);
   }
-  
+
   public async Task<List<TTarget>?> ListAsync<TTarget>(CancellationToken cancellationToken = default) where TTarget : class
   {
     return (await base.ListAsync(cancellationToken))?.MapListTo<TTarget>(_mapper);

@@ -1,5 +1,4 @@
 ﻿using Ardalis.GuardClauses;
-using Ardalis.Specification;
 
 using Clean.Architecture.SharedKernel.Extensions;
 using Clean.Architecture.SharedKernel.Utils;

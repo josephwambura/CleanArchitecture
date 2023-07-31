@@ -1,4 +1,5 @@
 ﻿using Clean.Architecture.SharedKernel.Interfaces;
+
 using MediatR;
 
 namespace Clean.Architecture.SharedKernel;

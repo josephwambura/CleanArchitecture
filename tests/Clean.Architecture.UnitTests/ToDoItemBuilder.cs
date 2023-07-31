@@ -8,7 +8,7 @@ public class ToDoItemBuilder
 {
   private ToDoItem _todo = new ToDoItem();
 
-  public ToDoItemBuilder Id(int id)
+  public ToDoItemBuilder Id(Guid id)
   {
     _todo.Id = id;
     return this;
@@ -28,7 +28,7 @@ public class ToDoItemBuilder
 
   public ToDoItemBuilder WithDefaultValues()
   {
-    _todo = new ToDoItem() { Id = 1, Title = "Test Item", Description = "Test Description" };
+    _todo = new ToDoItem() { Id = Guid.Parse("91C63CEA-7596-4E04-8C5E-880B2B2625A1"), Title = "Test Item", Description = "Test Description" };
 
     return this;
   }

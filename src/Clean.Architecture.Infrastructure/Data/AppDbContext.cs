@@ -1,8 +1,20 @@
-﻿using System.Reflection;
+﻿using System.Data;
+using System.Reflection;
+
+using Clean.Architecture.Core;
+using Clean.Architecture.Core.AdministrationModule.CompanyAggregate;
+using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate;
+using Clean.Architecture.Core.AdministrationModule.HolidayAggregate;
+using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
 using Clean.Architecture.Core.ContributorAggregate;
+using Clean.Architecture.Core.InventoryModule.ProductAggregate;
 using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Infrastructure.Data.Auth;
+using Clean.Architecture.Infrastructure.Extensions;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
+using Clean.Architecture.SharedKernel.Utils;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Clean.Architecture.Infrastructure.Data;
@@ -20,17 +32,42 @@ public class AppDbContext : DbContext
 
   public DbSet<ToDoItem> ToDoItems => Set<ToDoItem>();
   public DbSet<Project> Projects => Set<Project>();
-  public DbSet<Contributor> Contributors => Set<Contributor>(); 
+  public DbSet<Contributor> Contributors => Set<Contributor>();
+  public DbSet<Dashboard> Dashboards => Set<Dashboard>();
+
+  #region AdministrationModule
+
+  public DbSet<Company> Companies => Set<Company>();
+  public DbSet<StaticSetting> StaticSettings => Set<StaticSetting>();
+  public DbSet<Holiday> Holidays => Set<Holiday>();
+  public DbSet<Enumeration> Enumerations => Set<Enumeration>();
+
+  #endregion
+
+  #region InventoryModule
+
+  public DbSet<Product> Products => Set<Product>();
+
+  #endregion
+
+  #region MessagingModule
+
+  public DbSet<EmailAlert> EmailAlerts => Set<EmailAlert>();
+  public DbSet<TextAlert> TextAlerts => Set<TextAlert>();
+  public DbSet<FCMAlert> FCMAlerts => Set<FCMAlert>();
+  public DbSet<NotificationRecipient> NotificationRecipients => Set<NotificationRecipient>();
+
+  #endregion
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
-    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly(), i => !i.Namespace!.StartsWith(typeof(ApplicationDbContext).Namespace!));
   }
 
   public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
   {
-    int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+    var result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
     // ignore events if no dispatcher provided
     if (_dispatcher == null) return result;
@@ -49,5 +86,25 @@ public class AppDbContext : DbContext
   public override int SaveChanges()
   {
     return SaveChangesAsync().GetAwaiter().GetResult();
+  }
+
+  public bool BulkInsert<T>(IEnumerable<T> data, string tableName, ServiceHeader? serviceHeader = default)
+  {
+    var result = default(bool);
+
+    // Get the connection string from the context
+    var connectionString = Database.GetConnectionString();
+
+    // Create a SqlBulkCopy object with the connection string
+    using (var bulkCopy = new SqlBulkCopy(connectionString, SqlBulkCopyOptions.FireTriggers))
+    {
+      var table = SQLServerExtensions.GenerateDataTable(data, tableName, bulkCopy);
+
+      bulkCopy.WriteToServer(table);
+
+      result = true;
+    }
+
+    return result;
   }
 }

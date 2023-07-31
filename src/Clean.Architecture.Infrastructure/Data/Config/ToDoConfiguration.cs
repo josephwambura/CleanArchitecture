@@ -1,4 +1,6 @@
 ﻿using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.SharedKernel.Utils;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,5 +14,11 @@ public class ToDoConfiguration : IEntityTypeConfiguration<ToDoItem>
         .IsRequired();
     builder.Property(t => t.ContributorId)
         .IsRequired(false);
+
+    builder.Property(x => x.CreatedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.Property(x => x.ModifiedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.ToTable(Utility.DbTableName<ToDoItem>());
   }
 }

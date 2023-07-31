@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  clean.architecture.web:
+    image: ${DOCKER_REGISTRY-}cleanarchitectureweb
+    build:
+      context: .
+      dockerfile: src/Clean.Architecture.Web/Dockerfile
+    depends_on:
+      - sql
+      - cache
+  sql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: SQL_Server2022
+    environment:
+        - ACCEPT_EULA=y
+        - SA_PASSWORD=H@rd2H@rk!
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass H@rd2H@rk!
+    volumes: 
+      - cache:/data
+volumes:
+  sql:
+    driver: local
+  cache:
+    driver: local

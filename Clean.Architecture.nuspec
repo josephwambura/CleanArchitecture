@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Ardalis.CleanArchitecture.Template</id>
+    <id>Joseph.CleanArchitecture.Template</id>
     <title>ASP.NET Core Clean Architecture Solution</title>
-    <version>7.0.1</version>
-    <authors>Steve Smith, Erik Dahl</authors>
+    <version>7.0.2</version>
+    <authors>Joseph Wambura</authors>
     <description>
       The Clean Architecture Solution Template popularized by Steve @ardalis Smith. Provides a great starting point for modern and/or DDD solutions built with .NET 7 and C# 11.
       Features zero tight coupling to database or data access technology.
     </description>
     <language>en-US</language>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/ardalis/CleanArchitecture</projectUrl>
+    <projectUrl>https://github.com/josephwambura/CleanArchitecture</projectUrl>
     <releaseNotes>Updated package dependencies</releaseNotes>
     <packageTypes>
       <packageType name="Template" />

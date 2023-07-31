@@ -1,4 +1,6 @@
 ﻿using Clean.Architecture.Core.ContributorAggregate;
+using Clean.Architecture.SharedKernel.Utils;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,5 +13,11 @@ public class ContributorConfiguration : IEntityTypeConfiguration<Contributor>
     builder.Property(p => p.Name)
         .HasMaxLength(100)
         .IsRequired();
+
+    builder.Property(x => x.CreatedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.Property(x => x.ModifiedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.ToTable(Utility.DbTableName<Contributor>());
   }
 }

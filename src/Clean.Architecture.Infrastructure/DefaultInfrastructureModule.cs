@@ -1,10 +1,11 @@
 ﻿using System.Reflection;
 using Autofac;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
+using Clean.Architecture.Application.DTO;
 using Clean.Architecture.Core.Interfaces;
 using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Infrastructure.Data;
-using Clean.Architecture.SharedKernel;
-using Clean.Architecture.SharedKernel.Interfaces;
+using Clean.Architecture.Infrastructure.Data.Auth;
+using Clean.Architecture.Infrastructure.Services;
 using MediatR;
 using MediatR.Pipeline;
 using Module = Autofac.Module;
@@ -19,9 +20,21 @@ public class DefaultInfrastructureModule : Module
   public DefaultInfrastructureModule(bool isDevelopment, Assembly? callingAssembly = null)
   {
     _isDevelopment = isDevelopment;
+    var applicationAssembly =
+      Assembly.GetAssembly(typeof(Application.Interfaces.IHttpRequestAppService));
+    var applicationDTOAssembly =
+      Assembly.GetAssembly(typeof(Application.DTO.ProjectAggregate.ProjectDTO)); // TODO: Replace "ProjectDTO" with any type from your Application DTO project
     var coreAssembly =
       Assembly.GetAssembly(typeof(Project)); // TODO: Replace "Project" with any type from your Core project
     var infrastructureAssembly = Assembly.GetAssembly(typeof(StartupSetup));
+    if (applicationAssembly != null)
+    {
+      _assemblies.Add(applicationAssembly);
+    }
+    if (applicationDTOAssembly != null)
+    {
+      _assemblies.Add(applicationDTOAssembly);
+    }
     if (coreAssembly != null)
     {
       _assemblies.Add(coreAssembly);
@@ -54,9 +67,24 @@ public class DefaultInfrastructureModule : Module
 
   private void RegisterCommonDependencies(ContainerBuilder builder)
   {
+    builder.RegisterAutoMapper(typeof(DefaultApplicationDTOModule).Assembly);
+
+    builder.RegisterGeneric(typeof(AuthEfRepository<>))
+      .As(typeof(IRepository<>))
+      .As(typeof(IReadRepository<>))
+      .InstancePerLifetimeScope();
+    
     builder.RegisterGeneric(typeof(EfRepository<>))
       .As(typeof(IRepository<>))
       .As(typeof(IReadRepository<>))
+      .InstancePerLifetimeScope();
+    
+    builder.RegisterType<UnitOfWork>()
+      .As<IUnitOfWork>()
+      .InstancePerLifetimeScope();
+    
+    builder.RegisterType<ChannelService>()
+      .As<IChannelService>()
       .InstancePerLifetimeScope();
 
     builder
@@ -68,13 +96,11 @@ public class DefaultInfrastructureModule : Module
       .RegisterType<DomainEventDispatcher>()
       .As<IDomainEventDispatcher>()
       .InstancePerLifetimeScope();
-
-    builder.Register<ServiceFactory>(context =>
-    {
-      var c = context.Resolve<IComponentContext>();
-
-      return t => c.Resolve(t);
-    });
+    
+    builder
+      .RegisterType<AuthDomainEventDispatcher>()
+      .As<IAuthDomainEventDispatcher>()
+      .InstancePerLifetimeScope();
 
     var mediatrOpenTypes = new[]
     {

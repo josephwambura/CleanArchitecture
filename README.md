@@ -206,3 +206,8 @@ Domain events are a great pattern for decoupling a trigger for an operation from
 - [GuardClauses](https://github.com/ardalis/guardclauses)
 - [Result](https://github.com/ardalis/result)
 - [Specification](https://github.com/ardalis/specification)
+
+
+- dotnet new install D:\VisualStudio\source\repos\CleanArchitecture --force
+
+https://learn.microsoft.com/en-us/dotnet/core/tools/custom-templates

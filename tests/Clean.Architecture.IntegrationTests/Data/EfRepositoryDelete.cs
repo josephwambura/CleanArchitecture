@@ -1,4 +1,7 @@
 ﻿using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.SharedKernel.Utils;
+
 using Xunit;
 
 namespace Clean.Architecture.IntegrationTests.Data;
@@ -11,7 +14,10 @@ public class EfRepositoryDelete : BaseEfRepoTestFixture
     // add a project
     var repository = GetRepository();
     var initialName = Guid.NewGuid().ToString();
-    var project = new Project(initialName, PriorityStatus.Backlog);
+    var project = new Project(initialName, PriorityStatus.Backlog)
+    {
+      CreatedBy = "_SYS_"
+    };
     await repository.AddAsync(project);
 
     // delete the item
@@ -20,5 +26,35 @@ public class EfRepositoryDelete : BaseEfRepoTestFixture
     // verify it's no longer there
     Assert.DoesNotContain(await repository.ListAsync(),
         project => project.Name == initialName);
+  }
+
+  [Fact]
+  public async Task DeletesApplicationUserAfterAddingIt()
+  {
+    // add a project
+    var repository = GetAuthRepository();
+    var initialName = Guid.NewGuid().ToString();
+    var testApplicationUserEmail = "kelsey@clean.architecture.com";
+    var testApplicationUserPhone = "0726877526";
+    var applicationUser = new ApplicationUser()
+    {
+      UserName = initialName,
+      NormalizedUserName = initialName.ToUpper(),
+      Email = testApplicationUserEmail,
+      NormalizedEmail = testApplicationUserEmail.ToUpper(),
+      EmailConfirmed = true,
+      PhoneNumber = testApplicationUserPhone,
+      PhoneNumberConfirmed = true,
+      CreatedDate = DateTime.UtcNow,
+      CreatedBy = "_SYS_"
+    };
+    await repository.AddAsync(applicationUser);
+
+    // delete the item
+    await repository.DeleteAsync(applicationUser);
+
+    // verify it's no longer there
+    Assert.DoesNotContain(await repository.ListAsync(),
+        project => project.UserName == initialName);
   }
 }

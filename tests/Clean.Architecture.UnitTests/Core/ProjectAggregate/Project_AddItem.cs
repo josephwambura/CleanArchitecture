@@ -1,4 +1,6 @@
 ﻿using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.SharedKernel.Utils;
+
 using Xunit;
 
 namespace Clean.Architecture.UnitTests.Core.ProjectAggregate;

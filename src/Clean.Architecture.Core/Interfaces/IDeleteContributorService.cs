@@ -4,5 +4,5 @@ namespace Clean.Architecture.Core.Interfaces;
 
 public interface IDeleteContributorService
 {
-    public Task<Result> DeleteContributor(int contributorId);
+    public Task<Result> DeleteContributor(Guid contributorId);
 }

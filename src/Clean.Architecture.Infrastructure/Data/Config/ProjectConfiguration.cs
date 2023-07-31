@@ -1,4 +1,6 @@
 ﻿using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.SharedKernel.Utils;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,6 +17,15 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
     builder.Property(p => p.Priority)
       .HasConversion(
           p => p.Value,
-          p => PriorityStatus.FromValue(p));
+          p => PriorityStatus.FromValue(p))
+      .HasDefaultValue(PriorityStatus.Backlog);
+
+    //builder.OwnsOne(p => p.Address);
+
+    builder.Property(x => x.CreatedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.Property(x => x.ModifiedBy).HasMaxLength(DefaultSettings.Instance.UserNameMaxLength);
+
+    builder.ToTable(Utility.DbTableName<Project>());
   }
 }

@@ -259,7 +259,7 @@ using (var scope = app.Services.CreateScope())
   {
     var context = services.GetRequiredService<ApplicationDbContext>();
     //                    context.Database.Migrate();
-    //await context.Database.EnsureDeletedAsync();
+    await context.Database.EnsureDeletedAsync();
     await context.Database.EnsureCreatedAsync();
     SeedData.InitializeAuth(services);
   }
@@ -273,7 +273,7 @@ using (var scope = app.Services.CreateScope())
   {
     var context = services.GetRequiredService<AppDbContext>();
     //                    context.Database.Migrate();
-    //await context.Database.EnsureDeletedAsync();
+    await context.Database.EnsureDeletedAsync();
     await context.Database.EnsureCreatedAsync();
     SeedData.Initialize(services);
   }

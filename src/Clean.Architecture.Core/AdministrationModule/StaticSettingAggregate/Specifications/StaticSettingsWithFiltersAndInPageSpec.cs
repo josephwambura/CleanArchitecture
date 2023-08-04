@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate.Specifications;
 
-public class StaticSettingsWithFiltersAndInPageSpec : Specification<StaticSetting>, ISingleResultSpecification
+public class StaticSettingsWithFiltersAndInPageSpec : Specification<StaticSetting>, ISingleResultSpecification<StaticSetting>
 {
   public StaticSettingsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>7d54e22d-4f91-4a3e-84b9-ab58f6591a11</UserSecretsId>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <!--<InvariantGlobalization>true</InvariantGlobalization>-->
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>

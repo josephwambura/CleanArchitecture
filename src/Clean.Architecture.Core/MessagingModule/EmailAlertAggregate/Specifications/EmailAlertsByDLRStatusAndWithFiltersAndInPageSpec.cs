@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.MessagingModule.EmailAlertAggregate.Specifications;
 
-public class EmailAlertsByDLRStatusAndWithFiltersAndInPageSpec : Specification<EmailAlert>, ISingleResultSpecification
+public class EmailAlertsByDLRStatusAndWithFiltersAndInPageSpec : Specification<EmailAlert>, ISingleResultSpecification<EmailAlert>
 {
   public EmailAlertsByDLRStatusAndWithFiltersAndInPageSpec(byte[] dlrStatuses, string? searchString, int pageSize, string sortColumn, string sortDirection)
   {

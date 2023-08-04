@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.AuditLogAggregate.Specifications;
 
-public class AuditLogsWithFiltersAndInPageSpec : Specification<AuditLog>, ISingleResultSpecification
+public class AuditLogsWithFiltersAndInPageSpec : Specification<AuditLog>, ISingleResultSpecification<AuditLog>
 {
   public AuditLogsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

@@ -2,7 +2,7 @@
 
 namespace Clean.Architecture.Core.MessagingModule.NotificationRecipientAggregate.Specifications;
 
-public class NotificationRecipientByPhoneNumberSpec : Specification<NotificationRecipient>, ISingleResultSpecification
+public class NotificationRecipientByPhoneNumberSpec : Specification<NotificationRecipient>, ISingleResultSpecification<NotificationRecipient>
 {
   public NotificationRecipientByPhoneNumberSpec(string phoneNumber)
   {

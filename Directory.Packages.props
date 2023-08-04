@@ -6,14 +6,14 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Ardalis.ApiEndpoints" Version="4.1.0" />
-    <PackageVersion Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageVersion Include="Ardalis.GuardClauses" Version="4.1.1" />
     <PackageVersion Include="Ardalis.HttpClientTestExtensions" Version="4.1.0" />
     <PackageVersion Include="Ardalis.ListStartupServices" Version="1.1.4" />
     <PackageVersion Include="Ardalis.Result" Version="7.1.0" />
     <PackageVersion Include="Ardalis.Result.AspNetCore" Version="7.1.0" />
     <PackageVersion Include="Ardalis.SmartEnum" Version="7.0.0" />
-    <PackageVersion Include="Ardalis.Specification" Version="6.1.0" />
-    <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
+    <PackageVersion Include="Ardalis.Specification" Version="7.0.0" />
+    <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="7.0.0" />
     <PackageVersion Include="Autofac" Version="7.0.1" />
     <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageVersion Include="AutoMapper" Version="12.0.1" />
@@ -21,23 +21,23 @@
     <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="Cronos" Version="0.7.1" />
-    <PackageVersion Include="FastEndpoints" Version="5.14.0.1-beta" />
-    <PackageVersion Include="FastEndpoints.ApiExplorer" Version="2.1.0" />
+    <PackageVersion Include="FastEndpoints" Version="5.15.0" />
+    <PackageVersion Include="FastEndpoints.ApiExplorer" Version="2.2.0" />
     <PackageVersion Include="FastEndpoints.Swagger" Version="5.5.0" />
-    <PackageVersion Include="FastEndpoints.Swagger.Swashbuckle" Version="2.1.0" />
+    <PackageVersion Include="FastEndpoints.Swagger.Swashbuckle" Version="2.2.0" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.53.0" />
     <PackageVersion Include="LazyCache.AspNetCore" Version="2.4.0" />
-    <PackageVersion Include="MassTransit" Version="8.1.0-develop.1444" />
+    <PackageVersion Include="MassTransit" Version="8.1.0-develop.1462" />
     <PackageVersion Include="MassTransit.EntityFrameworkCore" Version="8.0.15-develop.1268" />
-    <PackageVersion Include="MassTransit.Quartz" Version="8.1.0-develop.1444" />
-    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.1.0-develop.1444" />
+    <PackageVersion Include="MassTransit.Quartz" Version="8.1.0-develop.1462" />
+    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.1.0-develop.1462" />
     <PackageVersion Include="MediatR" Version="12.1.1" />
     <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0-preview.6.23329.11" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-preview.5.23302.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.6.23329.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0-preview.6.23329.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.6.23329.4" />
@@ -47,10 +47,10 @@
     <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.0-preview.6.23329.11" />
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.6.23329.7" />
     <PackageVersion Include="Microsoft.Extensions.Localization" Version="8.0.0-preview.3.23177.8" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.0-preview-23364-03" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0-preview-23371-04" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.6.23360.4" />
-    <PackageVersion Include="Moq" Version="4.18.4" />
+    <PackageVersion Include="Moq" Version="4.20.0-beta" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageVersion Include="Quartz.Extensions.Hosting" Version="3.6.3" />
     <PackageVersion Include="RazorEngineCore" Version="2022.8.1" />

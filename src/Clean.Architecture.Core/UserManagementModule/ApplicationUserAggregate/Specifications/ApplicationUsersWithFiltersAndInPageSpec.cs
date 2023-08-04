@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate.Specifications;
 
-public class ApplicationUsersWithFiltersAndInPageSpec : Specification<ApplicationUser>, ISingleResultSpecification
+public class ApplicationUsersWithFiltersAndInPageSpec : Specification<ApplicationUser>, ISingleResultSpecification<ApplicationUser>
 {
   public ApplicationUsersWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

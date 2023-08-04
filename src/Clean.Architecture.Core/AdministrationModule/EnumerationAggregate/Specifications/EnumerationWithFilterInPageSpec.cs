@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.EnumerationAggregate.Specifications;
 
-public class EnumerationsWithFiltersAndInPageSpec : Specification<Enumeration>, ISingleResultSpecification
+public class EnumerationsWithFiltersAndInPageSpec : Specification<Enumeration>, ISingleResultSpecification<Enumeration>
 {
   public EnumerationsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

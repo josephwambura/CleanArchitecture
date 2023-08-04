@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.HolidayAggregate.Specifications;
 
-public class HolidaysWithFiltersAndInPageSpec : Specification<Holiday>, ISingleResultSpecification
+public class HolidaysWithFiltersAndInPageSpec : Specification<Holiday>, ISingleResultSpecification<Holiday>
 {
   public HolidaysWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.ProjectAggregate.Specifications;
 
-public class ProjectsWithFiltersAndInPageSpec : Specification<Project>, ISingleResultSpecification
+public class ProjectsWithFiltersAndInPageSpec : Specification<Project>, ISingleResultSpecification<Project>
 {
   public ProjectsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

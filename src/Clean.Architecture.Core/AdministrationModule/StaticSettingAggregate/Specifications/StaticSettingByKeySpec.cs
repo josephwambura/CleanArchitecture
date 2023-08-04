@@ -2,7 +2,7 @@
 
 namespace Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate.Specifications;
 
-public class StaticSettingByKeySpec : Specification<StaticSetting>, ISingleResultSpecification
+public class StaticSettingByKeySpec : Specification<StaticSetting>, ISingleResultSpecification<StaticSetting>
 {
   public StaticSettingByKeySpec(string key)
   {

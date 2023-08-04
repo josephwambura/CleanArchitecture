@@ -4,7 +4,7 @@ using Clean.Architecture.Core.ContributorAggregate;
 
 namespace Clean.Architecture.Core.ProjectAggregate.Specifications;
 
-public class ContributorByIdSpec : Specification<Contributor>, ISingleResultSpecification
+public class ContributorByIdSpec : Specification<Contributor>, ISingleResultSpecification<Contributor>
 {
   public ContributorByIdSpec(Guid contributorId)
   {

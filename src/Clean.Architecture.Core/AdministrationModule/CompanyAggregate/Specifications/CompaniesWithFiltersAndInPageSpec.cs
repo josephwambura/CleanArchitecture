@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.AdministrationModule.CompanyAggregate.Specifications;
 
-public class CompaniesWithFiltersAndInPageSpec : Specification<Company>, ISingleResultSpecification
+public class CompaniesWithFiltersAndInPageSpec : Specification<Company>, ISingleResultSpecification<Company>
 {
   public CompaniesWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

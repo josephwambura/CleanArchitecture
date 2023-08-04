@@ -2,7 +2,7 @@
 
 namespace Clean.Architecture.Core.WeatherForecastAggregate.Specifications;
 
-public class WeatherForecastByIdSpec : Specification<WeatherForecast>, ISingleResultSpecification
+public class WeatherForecastByIdSpec : Specification<WeatherForecast>, ISingleResultSpecification<WeatherForecast>
 {
   public WeatherForecastByIdSpec(Guid weatherForecastId)
   {

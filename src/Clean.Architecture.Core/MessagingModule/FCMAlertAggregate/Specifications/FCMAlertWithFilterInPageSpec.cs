@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.MessagingModule.FCMAlertAggregate.Specifications;
 
-public class FCMAlertsWithFiltersAndInPageSpec : Specification<FCMAlert>, ISingleResultSpecification
+public class FCMAlertsWithFiltersAndInPageSpec : Specification<FCMAlert>, ISingleResultSpecification<FCMAlert>
 {
   public FCMAlertsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

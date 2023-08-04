@@ -7,11 +7,7 @@ using Clean.Architecture.Core.ProjectAggregate;
 using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Core.ValueObjects;
 using Clean.Architecture.Core.WeatherForecastAggregate;
-using Clean.Architecture.Infrastructure.Data;
 using Clean.Architecture.Infrastructure.Data.Auth;
-using Clean.Architecture.SharedKernel.Utils;
-
-using Microsoft.EntityFrameworkCore;
 
 namespace Clean.Architecture.DistributedServices.Main;
 
@@ -185,7 +181,7 @@ public static class SeedData
 
     logger.LogInformation("Generating projects.");
 
-    int batchSize = 100000; // Adjust this as needed
+    int batchSize = 0; // Adjust this as needed
 
     for (int i = 0; i < (dbContext.Database.IsSqlServer() ? batchSize : dbContext.Database.IsSqlite() ? 500 : 0); i++)
     {

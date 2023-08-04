@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.MessagingModule.TextAlertAggregate.Specifications;
 
-public class TextAlertsWithFiltersAndInPageSpec : Specification<TextAlert>, ISingleResultSpecification
+public class TextAlertsWithFiltersAndInPageSpec : Specification<TextAlert>, ISingleResultSpecification<TextAlert>
 {
   public TextAlertsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

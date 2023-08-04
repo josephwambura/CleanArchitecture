@@ -6,6 +6,7 @@ using Clean.Architecture.Core.ContributorAggregate;
 using Clean.Architecture.Core.ProjectAggregate;
 using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Core.ValueObjects;
+using Clean.Architecture.Core.WeatherForecastAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 
 namespace Clean.Architecture.Web;
@@ -69,6 +70,10 @@ public static class SeedData
     Description = "Make sure all the tests run and review what they are doing."
   };
   public static readonly StaticSetting StaticSetting1 = StaticSettingFactory.CreateStaticSetting(DefaultSettings.Instance.EmailMessageFrom!, "noreply@cleanarchitecture.com", true, false, (byte)RecordStatus.Approved, ServiceHeader1);
+  public static readonly string[] summaries = new[]
+  {
+      "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+  };
 
   public static void Initialize(IServiceProvider serviceProvider)
   {
@@ -126,9 +131,26 @@ public static class SeedData
     {
       dbContext.Remove(item);
     }
+    foreach (var item in dbContext.WeatherForecasts)
+    {
+      dbContext.Remove(item);
+    }
     dbContext.SaveChanges();
 
     dbContext.StaticSettings.Add(StaticSetting1);
+
+    dbContext.SaveChanges();
+
+    dbContext.WeatherForecasts.AddRangeAsync(Enumerable.Range(1, 10).Select(index => new WeatherForecast
+    {
+      Id = Guid.NewGuid(),
+      Date = DateTime.Now.AddDays(index),
+      CreatedDate = DateTimeOffset.Now.AddDays(-(Random.Shared.Next(index))),
+      CreatedBy = "__SYS__",
+      TemperatureC = Random.Shared.Next(-20, 55),
+      Summary = summaries[Random.Shared.Next(summaries.Length)]
+    })
+            .ToArray());
 
     dbContext.SaveChanges();
 
@@ -159,7 +181,7 @@ public static class SeedData
 
     logger.LogInformation("Generating projects.");
 
-    int batchSize = 100000; // Adjust this as needed
+    int batchSize = 0; // Adjust this as needed
 
     for (int i = 0; i < (dbContext.Database.IsSqlServer() ? batchSize : dbContext.Database.IsSqlite() ? 500 : 0); i++)
     {

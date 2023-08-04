@@ -7,6 +7,7 @@ using Clean.Architecture.Application.DTO.MessagingModule.EmailAlertAggregate;
 using Clean.Architecture.Application.DTO.MessagingModule.TextAlertAggregate;
 using Clean.Architecture.Application.DTO.ProjectAggregate;
 using Clean.Architecture.Application.DTO.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Application.DTO.WeatherForecastAggregate;
 
 using Microsoft.AspNetCore.Identity;
 
@@ -33,6 +34,22 @@ public interface IChannelService
   Task<Result> MarkProjectAllItemsCompleteAsync(Guid projectId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   Task<Result<DashboardDTO>> FindDashboardsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  #endregion
+
+  #region WeatherForecastDTO
+
+  Task<Result<WeatherForecastDTO>> AddWeatherForecastAsync(WeatherForecastDTO weatherForecastDTO, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  Task<Result> UpdateWeatherForecastAsync(Guid weatherForecastId, WeatherForecastDTO weatherForecastDTO, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  Task<Result> DeleteWeatherForecastAsync(Guid weatherForecastId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  Task<Result<WeatherForecastDTO>> FindWeatherForecastAsync(Guid weatherForecastId, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  Task<Result<List<WeatherForecastDTO>>> FindWeatherForecastsAsync(ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
+
+  Task<Result<PageCollectionInfo<WeatherForecastDTO>>> GetWeatherForecastsWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, ServiceHeader? serviceHeader = default, CancellationToken cancellationToken = default);
 
   #endregion
 

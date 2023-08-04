@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.MessagingModule.NotificationRecipientAggregate.Specifications;
 
-public class NotificationRecipientsWithFiltersAndInPageSpec : Specification<NotificationRecipient>, ISingleResultSpecification
+public class NotificationRecipientsWithFiltersAndInPageSpec : Specification<NotificationRecipient>, ISingleResultSpecification<NotificationRecipient>
 {
   public NotificationRecipientsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

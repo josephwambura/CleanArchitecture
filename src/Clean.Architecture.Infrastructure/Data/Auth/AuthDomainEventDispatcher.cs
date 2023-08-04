@@ -21,7 +21,7 @@ public class AuthDomainEventDispatcher : IAuthDomainEventDispatcher
       entity.ClearDomainEvents();
       foreach (var domainEvent in events)
       {
-        await _mediator.Publish(domainEvent).ConfigureAwait(false);
+        await _mediator.Publish(domainEvent).ConfigureAwait(ConfigureAwaitOptions.None);
       }
     }
   }

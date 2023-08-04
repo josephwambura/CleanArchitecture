@@ -1,7 +1,5 @@
 ﻿using Clean.Architecture.Infrastructure;
 using Clean.Architecture.Infrastructure.Data.Auth;
-using Clean.Architecture.Infrastructure.Data;
-
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.RateLimiting;
@@ -14,9 +12,7 @@ using Clean.Architecture.Core;
 using FastEndpoints.Swagger.Swashbuckle;
 using Autofac;
 using Microsoft.OpenApi.Models;
-using Clean.Architecture.SharedKernel.Configurations;
 using FastEndpoints.ApiExplorer;
-using Clean.Architecture.SharedKernel.Utils;
 using Autofac.Extensions.DependencyInjection;
 using Clean.Architecture.Application;
 
@@ -97,12 +93,8 @@ builder.Services.AddStackExchangeRedisCache(setupAction =>
 builder.Services.AddLazyCache();
 
 builder.Services.AddControllers();
-builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddRazorPages();
-builder.Services.AddFastEndpoints();
-builder.Services.AddFastEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
   c.SwaggerDoc("v1", new OpenApiInfo
@@ -118,7 +110,7 @@ builder.Services.AddSwaggerGen(c =>
     }
   });
   c.EnableAnnotations();
-  c.OperationFilter<FastEndpointsOperationFilter>();
+  //c.OperationFilter<FastEndpointsOperationFilter>();
 });
 
 // add list services for diagnostic purposes - see https://github.com/ardalis/AspNetCoreStartupServices
@@ -139,13 +131,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 
 //builder.Logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure
 
-// Configure a fixed window policy with a limit of 10 requests per minute
-builder.Services.AddRateLimiter(_ =>
-    _.AddFixedWindowLimiter("fixed", options =>
-    {
-      options.PermitLimit = 10;
-      options.Window = TimeSpan.FromMinutes(1);
-    }));
+//// Configure a fixed window policy with a limit of 10 requests per minute
+//builder.Services.AddRateLimiter(_ =>
+//    _.AddFixedWindowLimiter("fixed", options =>
+//    {
+//      options.PermitLimit = 100;
+//      options.Window = TimeSpan.FromMinutes(1);
+//    }));
 
 var app = builder.Build();
 
@@ -169,7 +161,7 @@ else
 }
 
 app.UseRouting();
-app.UseFastEndpoints();
+//app.UseFastEndpoints();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -183,8 +175,8 @@ app.UseSwagger();
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean.Architecture API V1"));
 
-// Use the rate limiter middleware
-app.UseRateLimiter();
+//// Use the rate limiter middleware
+//app.UseRateLimiter();
 
 app.MapDefaultControllerRoute();
 app.MapControllers();
@@ -251,7 +243,7 @@ using (var scope = app.Services.CreateScope())
   {
     var context = services.GetRequiredService<AppDbContext>();
     //                    context.Database.Migrate();
-    //await context.Database.EnsureDeletedAsync();
+    await context.Database.EnsureDeletedAsync();
     await context.Database.EnsureCreatedAsync();
     SeedData.Initialize(services);
   }

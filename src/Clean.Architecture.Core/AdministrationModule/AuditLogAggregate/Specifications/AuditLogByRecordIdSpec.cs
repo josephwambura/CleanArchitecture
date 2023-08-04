@@ -2,7 +2,7 @@
 
 namespace Clean.Architecture.Core.AdministrationModule.AuditLogAggregate.Specifications;
 
-public class AuditLogByRecordIdSpec : Specification<AuditLog>, ISingleResultSpecification
+public class AuditLogByRecordIdSpec : Specification<AuditLog>, ISingleResultSpecification<AuditLog>
 {
   public AuditLogByRecordIdSpec(string phoneNumber)
   {

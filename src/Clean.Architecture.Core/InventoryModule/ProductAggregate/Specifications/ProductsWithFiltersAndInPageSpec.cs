@@ -4,7 +4,7 @@ using Clean.Architecture.SharedKernel.Extensions;
 
 namespace Clean.Architecture.Core.InventoryModule.ProductAggregate.Specifications;
 
-public class ProductsWithFiltersAndInPageSpec : Specification<Product>, ISingleResultSpecification
+public class ProductsWithFiltersAndInPageSpec : Specification<Product>, ISingleResultSpecification<Product>
 {
   public ProductsWithFiltersAndInPageSpec(string? searchString, string sortColumn, string sortDirection)
   {

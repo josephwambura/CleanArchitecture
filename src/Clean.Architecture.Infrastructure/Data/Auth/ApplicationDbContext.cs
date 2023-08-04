@@ -24,7 +24,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
   public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
   {
-    var result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+    var result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(ConfigureAwaitOptions.None);
 
     // ignore events if no dispatcher provided
     if (_dispatcher == null) return result;

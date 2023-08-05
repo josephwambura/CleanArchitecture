@@ -11,10 +11,7 @@ public class MetaController : BaseApiController
 
     var creationDate = System.IO.File.GetCreationTime(assembly.Location);
     var versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
-    var version = versionInfo.ProductVersion;
-    var productName = versionInfo.ProductName;
-    var companyName = versionInfo.CompanyName;
 
-    return Ok($"Company: {companyName}, Product: {productName}, Version: {version}, Last Updated: {creationDate}");
+    return Ok($"Company: {versionInfo.CompanyName}, Product: {versionInfo.ProductName}, Version: {versionInfo.ProductVersion}, Last Updated: {creationDate}");
   }
 }

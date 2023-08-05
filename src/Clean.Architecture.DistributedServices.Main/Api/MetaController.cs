@@ -4,10 +4,6 @@ namespace Clean.Architecture.DistributedServices.Main.Api;
 
 public class MetaController : BaseApiController
 {
-  /// <summary>
-  /// A sample API Controller. Consider using API Endpoints (see Endpoints folder) for a more SOLID approach to building APIs
-  /// https://github.com/ardalis/ApiEndpoints
-  /// </summary>
   [HttpGet("/info")]
   public ActionResult<string> Info()
   {

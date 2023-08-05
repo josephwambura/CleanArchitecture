@@ -2,9 +2,9 @@
 
 using Clean.Architecture.Application.DTO.WeatherForecastAggregate;
 using Clean.Architecture.Application.Interfaces;
-using Clean.Architecture.Core.WeatherForecastAggregate;
-using Clean.Architecture.Core.WeatherForecastAggregate.Events;
-using Clean.Architecture.Core.WeatherForecastAggregate.Specifications;
+using Clean.Architecture.Domain.WeatherForecastAggregate;
+using Clean.Architecture.Domain.WeatherForecastAggregate.Events;
+using Clean.Architecture.Domain.WeatherForecastAggregate.Specifications;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Extensions;
 using Clean.Architecture.SharedKernel.Interfaces;

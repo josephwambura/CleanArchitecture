@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 
 using Clean.Architecture.Application.DTO;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Infrastructure.Data;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.SharedKernel.Interfaces;

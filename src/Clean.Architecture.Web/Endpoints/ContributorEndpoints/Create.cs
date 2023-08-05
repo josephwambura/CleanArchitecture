@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.ContributorAggregate;
+﻿using Clean.Architecture.Domain.ContributorAggregate;
 
 using FastEndpoints;
 

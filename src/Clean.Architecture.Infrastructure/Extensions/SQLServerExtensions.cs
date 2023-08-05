@@ -3,7 +3,7 @@ using System.Data;
 
 using Ardalis.Specification;
 
-using Clean.Architecture.Core.ValueObjects;
+using Clean.Architecture.Domain.ValueObjects;
 
 using Microsoft.Data.SqlClient;
 
@@ -13,7 +13,7 @@ public static class SQLServerExtensions
 {
   public static DataTable GenerateDataTable<T>(IEnumerable<T> data, string tableName, SqlBulkCopy bulkCopy)
   {
-    var valueObjectsNameSpace = typeof(TransactionEnvironment).Namespace ?? "Clean.Architecture.Core.ValueObjects";
+    var valueObjectsNameSpace = typeof(TransactionEnvironment).Namespace ?? "Clean.Architecture.Domain.ValueObjects";
 
     bulkCopy.BulkCopyTimeout = 300;
 

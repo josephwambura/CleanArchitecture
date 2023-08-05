@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.WeatherForecastAggregate;
+﻿using Clean.Architecture.Domain.WeatherForecastAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config;
 

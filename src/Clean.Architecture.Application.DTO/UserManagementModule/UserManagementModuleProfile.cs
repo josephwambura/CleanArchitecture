@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 
 using Clean.Architecture.Application.DTO.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 
 namespace Clean.Architecture.Application.DTO.UserManagementModule;
 

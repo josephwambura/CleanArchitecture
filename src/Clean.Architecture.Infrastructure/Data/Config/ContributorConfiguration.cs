@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.ContributorAggregate;
+﻿using Clean.Architecture.Domain.ContributorAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config;
 

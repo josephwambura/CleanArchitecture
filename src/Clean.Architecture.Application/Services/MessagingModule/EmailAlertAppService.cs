@@ -2,10 +2,10 @@
 
 using Clean.Architecture.Application.Core.Interfaces.MessagingModule;
 using Clean.Architecture.Application.DTO.MessagingModule.EmailAlertAggregate;
-using Clean.Architecture.Core.MessagingModule.EmailAlertAggregate;
-using Clean.Architecture.Core.MessagingModule.EmailAlertAggregate.Events;
-using Clean.Architecture.Core.MessagingModule.EmailAlertAggregate.Specifications;
-using Clean.Architecture.Core.ValueObjects;
+using Clean.Architecture.Domain.MessagingModule.EmailAlertAggregate;
+using Clean.Architecture.Domain.MessagingModule.EmailAlertAggregate.Events;
+using Clean.Architecture.Domain.MessagingModule.EmailAlertAggregate.Specifications;
+using Clean.Architecture.Domain.ValueObjects;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

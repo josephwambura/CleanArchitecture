@@ -4,10 +4,10 @@ using Ardalis.Result;
 
 using Clean.Architecture.Application.DTO.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.Application.Interfaces.UserManagementModule;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate.Events;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate.Specifications;
-using Clean.Architecture.Core.ValueObjects;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate.Events;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate.Specifications;
+using Clean.Architecture.Domain.ValueObjects;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

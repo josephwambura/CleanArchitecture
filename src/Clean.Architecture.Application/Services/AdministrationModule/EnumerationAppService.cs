@@ -2,9 +2,9 @@
 
 using Clean.Architecture.Application.Core.Interfaces.AdministrationModule;
 using Clean.Architecture.Application.DTO.AdministrationModule.EnumerationAggregate;
-using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate;
-using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate.Events;
-using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate.Specifications;
+using Clean.Architecture.Domain.AdministrationModule.EnumerationAggregate;
+using Clean.Architecture.Domain.AdministrationModule.EnumerationAggregate.Events;
+using Clean.Architecture.Domain.AdministrationModule.EnumerationAggregate.Specifications;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

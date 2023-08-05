@@ -1,7 +1,7 @@
-﻿using Clean.Architecture.Core.Interfaces;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Events;
-using Clean.Architecture.Core.ProjectAggregate.Handlers;
+﻿using Clean.Architecture.Domain.Interfaces;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.ProjectAggregate.Events;
+using Clean.Architecture.Domain.ProjectAggregate.Handlers;
 
 using Moq;
 

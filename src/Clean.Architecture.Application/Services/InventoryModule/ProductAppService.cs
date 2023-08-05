@@ -2,9 +2,9 @@
 
 using Clean.Architecture.Application.DTO.InventoryModule.ProductAggregate;
 using Clean.Architecture.Application.Interfaces.InventoryModule;
-using Clean.Architecture.Core.InventoryModule.ProductAggregate;
-using Clean.Architecture.Core.InventoryModule.ProductAggregate.Events;
-using Clean.Architecture.Core.InventoryModule.ProductAggregate.Specifications;
+using Clean.Architecture.Domain.InventoryModule.ProductAggregate;
+using Clean.Architecture.Domain.InventoryModule.ProductAggregate.Events;
+using Clean.Architecture.Domain.InventoryModule.ProductAggregate.Specifications;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

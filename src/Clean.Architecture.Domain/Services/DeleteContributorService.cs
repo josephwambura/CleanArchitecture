@@ -1,6 +1,6 @@
 using Ardalis.Result;
 
-using Clean.Architecture.Core.ContributorAggregate.Events;
+using Clean.Architecture.Domain.ContributorAggregate.Events;
 using Clean.Architecture.Domain.ContributorAggregate;
 using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.SharedKernel.Interfaces;

@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.InventoryModule.ProductAggregate;
+﻿using Clean.Architecture.Domain.InventoryModule.ProductAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.InventoryModule;
 

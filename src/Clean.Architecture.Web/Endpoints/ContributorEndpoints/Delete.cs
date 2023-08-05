@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.Interfaces;
+﻿using Clean.Architecture.Domain.Interfaces;
 
 using FastEndpoints;
 

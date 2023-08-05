@@ -14,7 +14,7 @@ COPY ["src/Clean.Architecture.Web/Clean.Architecture.Web.csproj", "src/Clean.Arc
 COPY ["src/Clean.Architecture.Infrastructure/Clean.Architecture.Infrastructure.csproj", "src/Clean.Architecture.Infrastructure/"]
 COPY ["src/Clean.Architecture.Application/Clean.Architecture.Application.csproj", "src/Clean.Architecture.Application/"]
 COPY ["src/Clean.Architecture.Application.DTO/Clean.Architecture.Application.DTO.csproj", "src/Clean.Architecture.Application.DTO/"]
-COPY ["src/Clean.Architecture.Core/Clean.Architecture.Core.csproj", "src/Clean.Architecture.Core/"]
+COPY ["src/Clean.Architecture.Domain/Clean.Architecture.Domain.csproj", "src/Clean.Architecture.Domain/"]
 COPY ["src/Clean.Architecture.SharedKernel/Clean.Architecture.SharedKernel.csproj", "src/Clean.Architecture.SharedKernel/"]
 RUN dotnet restore "src/Clean.Architecture.Web/Clean.Architecture.Web.csproj"
 COPY . .

@@ -2,8 +2,8 @@
 
 using Clean.Architecture.Application.DTO.ProjectAggregate;
 using Clean.Architecture.Application.Interfaces;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.ProjectAggregate.Specifications;
 using Clean.Architecture.SharedKernel.Interfaces;
 
 namespace Clean.Architecture.Application.Services;

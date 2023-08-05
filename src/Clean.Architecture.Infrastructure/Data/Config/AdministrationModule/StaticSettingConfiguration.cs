@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
+﻿using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.AdministrationModule;
 

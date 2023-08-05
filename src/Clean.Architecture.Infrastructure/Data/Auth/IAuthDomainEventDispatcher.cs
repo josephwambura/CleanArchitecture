@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+﻿using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Auth;
 

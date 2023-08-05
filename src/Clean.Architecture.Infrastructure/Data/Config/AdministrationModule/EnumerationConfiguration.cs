@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate;
+﻿using Clean.Architecture.Domain.AdministrationModule.EnumerationAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.AdministrationModule;
 

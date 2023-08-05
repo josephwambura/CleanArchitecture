@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.AdministrationModule.AuditLogAggregate;
+﻿using Clean.Architecture.Domain.AdministrationModule.AuditLogAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.AdministrationModule;
 

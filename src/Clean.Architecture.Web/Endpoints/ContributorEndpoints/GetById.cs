@@ -1,5 +1,5 @@
-﻿using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
+﻿using Clean.Architecture.Domain.ContributorAggregate;
+using Clean.Architecture.Domain.ProjectAggregate.Specifications;
 
 using FastEndpoints;
 

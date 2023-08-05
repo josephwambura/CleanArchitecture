@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core;
+﻿using Clean.Architecture.Domain;
 
 namespace Clean.Architecture.Infrastructure.Data.Config;
 

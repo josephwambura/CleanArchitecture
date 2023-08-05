@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.ProjectAggregate;
+﻿using Clean.Architecture.Domain.ProjectAggregate;
 using Clean.Architecture.SharedKernel.Extensions;
 using Clean.Architecture.SharedKernel.Utils;
 

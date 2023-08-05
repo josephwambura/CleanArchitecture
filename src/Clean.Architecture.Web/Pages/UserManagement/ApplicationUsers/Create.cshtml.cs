@@ -3,7 +3,7 @@
 using Ardalis.GuardClauses;
 
 using Clean.Architecture.Application.DTO.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;

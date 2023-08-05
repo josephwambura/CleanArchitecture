@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Mail;
 
-using Clean.Architecture.Core.Interfaces;
+using Clean.Architecture.Domain.Interfaces;
 
 using Microsoft.Extensions.Logging;
 

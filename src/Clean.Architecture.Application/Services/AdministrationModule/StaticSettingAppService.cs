@@ -2,9 +2,9 @@
 
 using Clean.Architecture.Application.DTO.AdministrationModule.StaticSettingAggregate;
 using Clean.Architecture.Application.Interfaces.AdministrationModule;
-using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
-using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate.Events;
-using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate.Specifications;
+using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate;
+using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate.Events;
+using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate.Specifications;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

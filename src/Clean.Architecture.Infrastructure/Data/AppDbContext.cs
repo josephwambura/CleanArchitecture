@@ -1,15 +1,15 @@
 ﻿using System.Data;
 using System.Reflection;
 
-using Clean.Architecture.Core;
-using Clean.Architecture.Core.AdministrationModule.CompanyAggregate;
-using Clean.Architecture.Core.AdministrationModule.EnumerationAggregate;
-using Clean.Architecture.Core.AdministrationModule.HolidayAggregate;
-using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
-using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.Core.InventoryModule.ProductAggregate;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.WeatherForecastAggregate;
+using Clean.Architecture.Domain;
+using Clean.Architecture.Domain.AdministrationModule.CompanyAggregate;
+using Clean.Architecture.Domain.AdministrationModule.EnumerationAggregate;
+using Clean.Architecture.Domain.AdministrationModule.HolidayAggregate;
+using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate;
+using Clean.Architecture.Domain.ContributorAggregate;
+using Clean.Architecture.Domain.InventoryModule.ProductAggregate;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.WeatherForecastAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.Infrastructure.Extensions;
 

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 
 using Clean.Architecture.Application.DTO.ContributorAggregate;
-using Clean.Architecture.Core;
-using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Domain;
+using Clean.Architecture.Domain.ContributorAggregate;
+using Clean.Architecture.Domain.ProjectAggregate;
 
 namespace Clean.Architecture.Application.DTO.ProjectAggregate;
 

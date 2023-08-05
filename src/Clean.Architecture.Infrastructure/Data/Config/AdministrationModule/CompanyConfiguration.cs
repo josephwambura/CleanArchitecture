@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.AdministrationModule.CompanyAggregate;
+﻿using Clean.Architecture.Domain.AdministrationModule.CompanyAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.AdministrationModule;
 

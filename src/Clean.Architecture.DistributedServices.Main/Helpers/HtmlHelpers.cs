@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-using Clean.Architecture.Core.ValueObjects;
+using Clean.Architecture.Domain.ValueObjects;
 
 using Microsoft.Net.Http.Headers;
 

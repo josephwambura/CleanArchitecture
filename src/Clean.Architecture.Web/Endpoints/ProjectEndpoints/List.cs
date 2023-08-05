@@ -1,6 +1,6 @@
 ﻿using Ardalis.ApiEndpoints;
 
-using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Domain.ProjectAggregate;
 
 using Swashbuckle.AspNetCore.Annotations;
 

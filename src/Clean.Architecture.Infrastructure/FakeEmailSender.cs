@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 
-using Clean.Architecture.Core.Interfaces;
+using Clean.Architecture.Domain.Interfaces;
 
 namespace Clean.Architecture.Infrastructure;
 

@@ -2,9 +2,9 @@
 
 using Clean.Architecture.Application.DTO.AdministrationModule.CompanyAggregate;
 using Clean.Architecture.Application.Interfaces.AdministrationModule;
-using Clean.Architecture.Core.AdministrationModule.CompanyAggregate;
-using Clean.Architecture.Core.AdministrationModule.CompanyAggregate.Events;
-using Clean.Architecture.Core.AdministrationModule.CompanyAggregate.Specifications;
+using Clean.Architecture.Domain.AdministrationModule.CompanyAggregate;
+using Clean.Architecture.Domain.AdministrationModule.CompanyAggregate.Events;
+using Clean.Architecture.Domain.AdministrationModule.CompanyAggregate.Specifications;
 using Clean.Architecture.SharedKernel;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;

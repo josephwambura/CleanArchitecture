@@ -1,5 +1,5 @@
-﻿using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+﻿using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 using Clean.Architecture.SharedKernel.Utils;
 
 using Microsoft.EntityFrameworkCore;

@@ -1,8 +1,8 @@
 ﻿using Ardalis.GuardClauses;
 
 using Clean.Architecture.Application.DTO.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.ProjectAggregate.Specifications;
 
 using Microsoft.Extensions.Localization;
 

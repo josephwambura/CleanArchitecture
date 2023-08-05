@@ -4,7 +4,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 
 using Clean.Architecture.Application;
-using Clean.Architecture.Core;
+using Clean.Architecture.Domain;
 using Clean.Architecture.Infrastructure;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.Web;

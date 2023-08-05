@@ -1,6 +1,6 @@
 ﻿using Ardalis.Result;
 
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
+using Clean.Architecture.Domain.ProjectAggregate.Specifications;
 using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.Domain.ProjectAggregate;
 using Clean.Architecture.SharedKernel.Interfaces;

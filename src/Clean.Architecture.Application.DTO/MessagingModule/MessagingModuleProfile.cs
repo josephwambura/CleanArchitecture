@@ -2,8 +2,8 @@
 
 using Clean.Architecture.Application.DTO.MessagingModule.EmailAlertAggregate;
 using Clean.Architecture.Application.DTO.MessagingModule.TextAlertAggregate;
-using Clean.Architecture.Core.MessagingModule.EmailAlertAggregate;
-using Clean.Architecture.Core.MessagingModule.TextAlertAggregate;
+using Clean.Architecture.Domain.MessagingModule.EmailAlertAggregate;
+using Clean.Architecture.Domain.MessagingModule.TextAlertAggregate;
 
 namespace Clean.Architecture.Application.DTO.MessagingModule;
 

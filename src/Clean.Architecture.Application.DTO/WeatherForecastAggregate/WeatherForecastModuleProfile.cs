@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Core.WeatherForecastAggregate;
+using Clean.Architecture.Domain.WeatherForecastAggregate;
 
 namespace Clean.Architecture.Application.DTO.WeatherForecastAggregate;
 

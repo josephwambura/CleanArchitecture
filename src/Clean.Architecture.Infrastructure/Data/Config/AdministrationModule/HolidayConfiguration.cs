@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.AdministrationModule.HolidayAggregate;
+﻿using Clean.Architecture.Domain.AdministrationModule.HolidayAggregate;
 
 namespace Clean.Architecture.Infrastructure.Data.Config.AdministrationModule;
 

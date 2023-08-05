@@ -1,9 +1,9 @@
 ﻿global using Ardalis.Result;
 
-global using Clean.Architecture.Core.MessagingModule.EmailAlertAggregate;
-global using Clean.Architecture.Core.MessagingModule.TextAlertAggregate;
-global using Clean.Architecture.Core.MessagingModule.FCMAlertAggregate;
-global using Clean.Architecture.Core.MessagingModule.NotificationRecipientAggregate;
+global using Clean.Architecture.Domain.MessagingModule.EmailAlertAggregate;
+global using Clean.Architecture.Domain.MessagingModule.TextAlertAggregate;
+global using Clean.Architecture.Domain.MessagingModule.FCMAlertAggregate;
+global using Clean.Architecture.Domain.MessagingModule.NotificationRecipientAggregate;
 global using Clean.Architecture.SharedKernel.Utils;
 
 global using Microsoft.EntityFrameworkCore;

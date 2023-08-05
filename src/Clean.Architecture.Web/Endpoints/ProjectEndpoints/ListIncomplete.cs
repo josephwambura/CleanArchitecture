@@ -1,6 +1,6 @@
 ﻿using Ardalis.ApiEndpoints;
 
-using Clean.Architecture.Core.Interfaces;
+using Clean.Architecture.Domain.Interfaces;
 
 using Swashbuckle.AspNetCore.Annotations;
 

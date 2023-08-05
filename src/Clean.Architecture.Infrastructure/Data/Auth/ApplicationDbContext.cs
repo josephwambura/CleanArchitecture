@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 

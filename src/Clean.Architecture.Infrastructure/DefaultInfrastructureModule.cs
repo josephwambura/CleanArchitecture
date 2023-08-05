@@ -5,8 +5,8 @@ using Autofac;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 
 using Clean.Architecture.Application.DTO;
-using Clean.Architecture.Core.Interfaces;
-using Clean.Architecture.Core.ProjectAggregate;
+using Clean.Architecture.Domain.Interfaces;
+using Clean.Architecture.Domain.ProjectAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 using Clean.Architecture.Infrastructure.Services;
 

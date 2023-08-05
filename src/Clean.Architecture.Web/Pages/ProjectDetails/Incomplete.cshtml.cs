@@ -1,5 +1,5 @@
-﻿using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.ProjectAggregate.Specifications;
+﻿using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.ProjectAggregate.Specifications;
 
 namespace Clean.Architecture.Web.Pages.ProjectDetails;
 

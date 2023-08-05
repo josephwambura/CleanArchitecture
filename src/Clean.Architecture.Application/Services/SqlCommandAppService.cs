@@ -2,7 +2,7 @@
 
 using Clean.Architecture.Application.DTO;
 using Clean.Architecture.Application.Interfaces;
-using Clean.Architecture.Core;
+using Clean.Architecture.Domain;
 using Clean.Architecture.SharedKernel.Interfaces;
 using Clean.Architecture.SharedKernel.Utils;
 

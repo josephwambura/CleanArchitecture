@@ -8,7 +8,7 @@ using Clean.Architecture.DistributedServices.Main;
 using Serilog;
 using FastEndpoints;
 using Ardalis.ListStartupServices;
-using Clean.Architecture.Core;
+using Clean.Architecture.Domain;
 using FastEndpoints.Swagger.Swashbuckle;
 using Autofac;
 using Microsoft.OpenApi.Models;

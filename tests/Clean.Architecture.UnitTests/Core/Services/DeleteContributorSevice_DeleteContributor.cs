@@ -1,5 +1,5 @@
-﻿using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.Core.Services;
+﻿using Clean.Architecture.Domain.ContributorAggregate;
+using Clean.Architecture.Domain.Services;
 using Clean.Architecture.SharedKernel.Interfaces;
 
 using MediatR;

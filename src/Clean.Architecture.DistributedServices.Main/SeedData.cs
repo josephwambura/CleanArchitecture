@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics;
 
-using Clean.Architecture.Core;
-using Clean.Architecture.Core.AdministrationModule.StaticSettingAggregate;
-using Clean.Architecture.Core.ContributorAggregate;
-using Clean.Architecture.Core.ProjectAggregate;
-using Clean.Architecture.Core.UserManagementModule.ApplicationUserAggregate;
-using Clean.Architecture.Core.ValueObjects;
-using Clean.Architecture.Core.WeatherForecastAggregate;
+using Clean.Architecture.Domain;
+using Clean.Architecture.Domain.AdministrationModule.StaticSettingAggregate;
+using Clean.Architecture.Domain.ContributorAggregate;
+using Clean.Architecture.Domain.ProjectAggregate;
+using Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;
+using Clean.Architecture.Domain.ValueObjects;
+using Clean.Architecture.Domain.WeatherForecastAggregate;
 using Clean.Architecture.Infrastructure.Data.Auth;
 
 namespace Clean.Architecture.DistributedServices.Main;

@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Core.ValueObjects;
+﻿using Clean.Architecture.Domain.ValueObjects;
 using Clean.Architecture.SharedKernel.Utils;
 
 namespace Clean.Architecture.Domain.UserManagementModule.ApplicationUserAggregate;

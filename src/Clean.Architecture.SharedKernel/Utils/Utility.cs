@@ -33,11 +33,11 @@ public static class Utility
   {
     bool stringMode = false;
 
-    Decimal.TryParse(actualValue, out decimal amnt);
+    decimal.TryParse(actualValue, out decimal amnt);
     if (actualValue.EndsWith("-") || amnt == 0) stringMode = true;
     else
     {
-      Decimal.TryParse(typedValue, out amnt);
+      decimal.TryParse(typedValue, out amnt);
       if (amnt == 0) stringMode = true;
     }
 
@@ -63,10 +63,10 @@ public static class Utility
       rfmt = format.PadRight(dCount + rfmt.Length, '0');
     }
 
-    string amount = String.IsNullOrEmpty(actualValue) ? "0" :
+    string amount = string.IsNullOrEmpty(actualValue) ? "0" :
         Convert.ToDouble(actualValue).ToString(fmt);
     if (amount.Contains(dc))
-      amount = amount.Substring(0, amount.Length - 1);
+      amount = amount[..^1];
 
     var dbl = Convert.ToDouble(amount + typedValue);
     return (dbl).ToString(rfmt);
@@ -191,13 +191,11 @@ public static class Utility
   {
     if (!string.IsNullOrWhiteSpace(requestId))
     {
-      Random random = new Random(requestId.GetHashCode());
+      var random = new Random(requestId.GetHashCode());
 
       int recordId = random.Next();
 
-      Random rnd = new Random();
-
-      int next = rnd.Next(99);
+      int next = Random.Shared.Next(99);
 
       return $"{recordId}{next}".PadRight(12, '0'); ;
     }

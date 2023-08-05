@@ -22,6 +22,9 @@ public static class SpecificationExtensions
 
     if (sortColumn == "FormattedCreatedDate")
       sortColumn = "CreatedDate";
+    
+    if (sortColumn == "FormattedModifiedDate")
+      sortColumn = "ModifiedDate";
 
     if (sortDirection == "asc")
     {

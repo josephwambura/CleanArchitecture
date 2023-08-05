@@ -11,7 +11,7 @@
 /// Summary: An System.Collections.Generic.IEnumerable`1 of Clean.Architecture.SharedKernel.Models.APIError instances containing errors that occurred during the identity operation.
 /// Value: An System.Collections.Generic.IEnumerable`1 of Clean.Architecture.SharedKernel.Models.APIError instances.
 /// </param>
-public record APIResult(bool Succeeded, object @object, IEnumerable<APIError>? Errors = default)
+public record APIResult(bool Succeeded, dynamic data, IEnumerable<APIError>? Errors = default)
 {
   public static APIResult Success { get; } = default!;
 

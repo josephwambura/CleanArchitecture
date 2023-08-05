@@ -23,14 +23,12 @@ public static class PasswordGenerator
     const string SPECIAL_CHARACTERS = @"!#$%&*@\";
     const char SPACE_CHARACTER = ' ';
 
-    Random random = new Random();
-
     string combinedPasswordCharacterSet = "";
     StringBuilder compulsoryPasswordCharacters = new StringBuilder();
 
     if (includeLowercase)
     {
-      int index = random.Next(LOWERCASE_CHARACTERS.Length);
+      int index = Random.Shared.Next(LOWERCASE_CHARACTERS.Length);
       compulsoryPasswordCharacters.Append(LOWERCASE_CHARACTERS[index]);
 
       combinedPasswordCharacterSet += LOWERCASE_CHARACTERS;
@@ -38,7 +36,7 @@ public static class PasswordGenerator
 
     if (includeUppercase)
     {
-      int index = random.Next(UPPERCASE_CHARACTERS.Length);
+      int index = Random.Shared.Next(UPPERCASE_CHARACTERS.Length);
       compulsoryPasswordCharacters.Append(UPPERCASE_CHARACTERS[index]);
 
       combinedPasswordCharacterSet += UPPERCASE_CHARACTERS;
@@ -46,7 +44,7 @@ public static class PasswordGenerator
 
     if (includeNumeric)
     {
-      int index = random.Next(NUMERIC_CHARACTERS.Length);
+      int index = Random.Shared.Next(NUMERIC_CHARACTERS.Length);
       compulsoryPasswordCharacters.Append(NUMERIC_CHARACTERS[index]);
 
       combinedPasswordCharacterSet += NUMERIC_CHARACTERS;
@@ -54,7 +52,7 @@ public static class PasswordGenerator
 
     if (includeSpecial)
     {
-      int index = random.Next(SPECIAL_CHARACTERS.Length);
+      int index = Random.Shared.Next(SPECIAL_CHARACTERS.Length);
       compulsoryPasswordCharacters.Append(SPECIAL_CHARACTERS[index]);
 
       combinedPasswordCharacterSet += SPECIAL_CHARACTERS;
@@ -73,7 +71,7 @@ public static class PasswordGenerator
 
     for (int characterPosition = 0; characterPosition < lengthOfPassword; characterPosition++)
     {
-      password[characterPosition] = combinedPasswordCharacterSet[random.Next(characterSetLength - 1)];
+      password[characterPosition] = combinedPasswordCharacterSet[Random.Shared.Next(characterSetLength - 1)];
 
       bool moreThanTwoIdenticalInARow =
           characterPosition > MAXIMUM_IDENTICAL_CONSECUTIVE_CHARS

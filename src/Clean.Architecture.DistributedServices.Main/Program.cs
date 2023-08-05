@@ -131,13 +131,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 
 //builder.Logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure
 
-//// Configure a fixed window policy with a limit of 10 requests per minute
-//builder.Services.AddRateLimiter(_ =>
-//    _.AddFixedWindowLimiter("fixed", options =>
-//    {
-//      options.PermitLimit = 100;
-//      options.Window = TimeSpan.FromMinutes(1);
-//    }));
+// Configure a fixed window policy with a limit of 10 requests per minute
+builder.Services.AddRateLimiter(_ =>
+    _.AddFixedWindowLimiter("fixed", options =>
+    {
+      options.PermitLimit = 100;
+      options.Window = TimeSpan.FromMinutes(1);
+    }));
 
 var app = builder.Build();
 
@@ -175,8 +175,8 @@ app.UseSwagger();
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean.Architecture API V1"));
 
-//// Use the rate limiter middleware
-//app.UseRateLimiter();
+// Use the rate limiter middleware
+app.UseRateLimiter();
 
 app.MapDefaultControllerRoute();
 app.MapControllers();
@@ -243,7 +243,7 @@ using (var scope = app.Services.CreateScope())
   {
     var context = services.GetRequiredService<AppDbContext>();
     //                    context.Database.Migrate();
-    await context.Database.EnsureDeletedAsync();
+    //await context.Database.EnsureDeletedAsync();
     await context.Database.EnsureCreatedAsync();
     SeedData.Initialize(services);
   }

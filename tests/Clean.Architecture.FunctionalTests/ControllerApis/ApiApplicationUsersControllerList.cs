@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 
 using Ardalis.HttpClientTestExtensions;
 
@@ -223,13 +224,15 @@ public class ApplicationUserCreate : IClassFixture<CustomWebApplicationFactory<P
     var result = await _client.PostAndDeserializeAsync<APIResult>("/api/ApplicationUsers/Create", jsonContent);
 
     Assert.NotNull(result);
-    result.Deconstruct(out bool succeeded, out object @object, out IEnumerable<APIError>? errors);
+    result.Deconstruct(out bool succeeded, out dynamic @object, out IEnumerable<APIError>? errors);
 
     Assert.True(succeeded);
 
     if (succeeded)
     {
-      var createUserResponse = @object as CreateUserResponse;
+      JsonObject jsonObject = JsonObject.Create(@object, new JsonNodeOptions() { PropertyNameCaseInsensitive = true });
+
+      var createUserResponse = JsonSerializer.Deserialize<CreateUserResponse>(jsonObject,  new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
       Assert.True(Guid.TryParse(createUserResponse?.UserId, out Guid userId));
       Assert.True(userId != Guid.Empty);
@@ -268,9 +271,7 @@ public class ApplicationUserCreate : IClassFixture<CustomWebApplicationFactory<P
 
   private static string RandomMiddleName()
   {
-    var random = new Random();
-
-    return $"Githithu{random.Next(99999)}";
+    return $"Githithu{Random.Shared.Next(99999)}";
   }
 }
 

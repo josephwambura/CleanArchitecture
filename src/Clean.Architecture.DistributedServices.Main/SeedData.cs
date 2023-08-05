@@ -181,7 +181,7 @@ public static class SeedData
 
     logger.LogInformation("Generating projects.");
 
-    int batchSize = 0; // Adjust this as needed
+    int batchSize = 1000000; // Adjust this as needed
 
     for (int i = 0; i < (dbContext.Database.IsSqlServer() ? batchSize : dbContext.Database.IsSqlite() ? 500 : 0); i++)
     {

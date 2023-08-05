@@ -34,8 +34,7 @@ public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProg
       var scopedServices = scope.ServiceProvider;
       var db = scopedServices.GetRequiredService<AppDbContext>();
 
-      var logger = scopedServices
-          .GetRequiredService<ILogger<CustomWebApplicationFactory<TProgram>>>();
+      var logger = scopedServices.GetRequiredService<ILogger<CustomWebApplicationFactory<TProgram>>>();
 
       // Ensure the database is created.
       db.Database.EnsureCreated();

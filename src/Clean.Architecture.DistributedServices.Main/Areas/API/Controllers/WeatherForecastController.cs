@@ -16,13 +16,9 @@ public class WeatherForecastController : BaseApiController
 
   [HttpGet(Name = "GetWeatherForecast")]
   public async Task<List<WeatherForecastDTO>> GetAsync(CancellationToken cancellationToken)
-  {
-    return (await _channelService.FindWeatherForecastsAsync(this.GetServiceHeader(User), cancellationToken)).Value;
-  }
+    => (await _channelService.FindWeatherForecastsAsync(this.GetServiceHeader(User), cancellationToken)).Value;
 
   [HttpGet("GetWeatherForecastWithFiltersAndInPage")]
   public async Task<IActionResult> GetWithFiltersAndInPageAsync(string? searchString, int pageNumber, int pageSize, string sortColumn, string sortDirection, CancellationToken cancellationToken)
-  {
-    return Ok((await _channelService.GetWeatherForecastsWithFiltersAndInPageAsync(searchString, pageNumber, pageSize, sortColumn, sortDirection, this.GetServiceHeader(User), cancellationToken)).Value);
-  }
+    => Ok((await _channelService.GetWeatherForecastsWithFiltersAndInPageAsync(searchString, pageNumber, pageSize, sortColumn, sortDirection, this.GetServiceHeader(User), cancellationToken)).Value);
 }

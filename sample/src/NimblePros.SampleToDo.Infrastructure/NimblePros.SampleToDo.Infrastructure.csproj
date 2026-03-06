@@ -19,6 +19,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="MimeKit" />
     <ProjectReference Include="..\NimblePros.SampleToDo.Core\NimblePros.SampleToDo.Core.csproj" />
     <ProjectReference Include="..\NimblePros.SampleToDo.UseCases\NimblePros.SampleToDo.UseCases.csproj" />
   </ItemGroup>
